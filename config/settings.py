@@ -10,7 +10,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url  # Для парсинга DATABASE_URL от Railway
 
-load_dotenv()
+# load_dotenv() читает .env при локальной разработке.
+# override=False гарантирует, что системные переменные окружения (Railway)
+# НИКОГДА не перезаписываются значениями из .env файла.
+load_dotenv(override=False)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# os.environ.get() читает системные переменные окружения напрямую —
+# именно так Railway передаёт все переменные сервиса.
 SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# Диагностика при старте: видно в логах Railway Deploy
+print(f"🔑 SECRET_KEY {'установлен ✅' if SECRET_KEY else 'НЕ НАЙДЕН ❌'}")
+print(f"🌍 Все переменные окружения: {[k for k in os.environ if not k.startswith('_')]}")
 
 if not SECRET_KEY:
     if os.environ.get('DEBUG', 'False').lower() in ('true', '1', 'yes'):
@@ -28,14 +37,17 @@ if not SECRET_KEY:
         print("⚠️  WARNING: Using default SECRET_KEY for development!")
     else:
         raise ValueError(
-            "❌ SECRET_KEY не задан! Установите переменную окружения SECRET_KEY в .env файле"
+            "❌ SECRET_KEY не задан! Убедитесь, что переменная SECRET_KEY "
+            "добавлена в Variables сервиса на Railway."
         )
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() in ('true', '1', 'yes')
 
 # ALLOWED_HOSTS: локально + все поддомены Railway
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+# filter(None, ...) убирает пустые строки, которые возникают при split('')
+_allowed_hosts_env = os.environ.get('ALLOWED_HOSTS', '')
+ALLOWED_HOSTS = [h.strip() for h in _allowed_hosts_env.split(',') if h.strip()]
 if not ALLOWED_HOSTS:
     ALLOWED_HOSTS = [
         'localhost', '127.0.0.1', '[::1]',      # Локальная разработка
