@@ -1,8 +1,9 @@
 from django.urls import path
 from . import views
 
-app_name = 'gallery'  # ← Просто добавьте эту строку
+app_name = 'gallery'
 
 urlpatterns = [
-    path('cases/', views.case_list, name='cases'),  # ← НЕ УДАЛЯЙТЕ это!
+    path('gallery/', views.cases_page, name='cases'),        # ← /gallery/
+    path('gallery/<int:case_id>/', views.case_detail, name='case_detail'),
 ]
