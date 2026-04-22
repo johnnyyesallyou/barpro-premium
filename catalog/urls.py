@@ -1,9 +1,9 @@
 from django.urls import path
 from . import views
 
-app_name = 'catalog'  # ← ЭТО СТРОКА РЕШАЕТ ПРОБЛЕМУ
+app_name = 'catalog'
 
 urlpatterns = [
-    path('packages/', views.packages_list, name='packages'),
-    path('menu/', views.menu_list, name='menu'),
+    path('menu/', views.menu_page, name='menu'),        # ← /menu/
+    path('packages/', views.packages_page, name='packages'),  # ← /packages/
 ]
