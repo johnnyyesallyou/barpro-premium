@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+# Выполняем миграции
+python manage.py migrate --noinput
+
+# Запускаем Gunicorn
+exec gunicorn config.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 3
