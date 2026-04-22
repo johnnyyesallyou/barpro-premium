@@ -27,6 +27,10 @@ RUN mkdir -p logs staticfiles media
 # Собираем статику
 RUN python manage.py collectstatic --noinput || true
 
+# Копируем и настраиваем entrypoint
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
 # Создаем пользователя для запуска приложения
 RUN useradd -m -u 1000 appuser && \
     chown -R appuser:appuser /app
@@ -34,5 +38,5 @@ USER appuser
 
 EXPOSE 8000
 
-# Команда запуска
-CMD gunicorn config.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 3
+# Команда запуска: выполняем миграции, затем запускаем Gunicorn
+CMD ["/app/entrypoint.sh"]
