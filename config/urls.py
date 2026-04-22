@@ -1,3 +1,4 @@
+# config/urls.py
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -10,12 +11,12 @@ urlpatterns = [
     path('calculator/', include('calculator.urls')),
     path('api/lead/', include('leads.urls')),
     
-    # Маршруты каталога и галереи
-    path('', include('catalog.urls')),
-    path('', include('gallery.urls')),
+    # 🔹 Маршруты каталога и галереи — С ПРЕФИКСАМИ!
+    path('menu/', include('catalog.urls')),        # ← Было: '' → Стало: 'menu/'
+    path('gallery/', include('gallery.urls')),      # ← Было: '' → Стало: 'gallery/'
     
-    # Общий роутер для страниц (должен быть последним!)
-    path('', include('core.urls')),
+    # 🔹 Core (главная + страницы) — ПОСЛЕДНИМ, с пустым префиксом
+    path('', include('core.urls')),                 # ← Обрабатывает корень "/"
 ]
 
 if settings.DEBUG:
