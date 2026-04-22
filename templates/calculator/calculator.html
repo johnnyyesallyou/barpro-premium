@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Калькулятор стоимости — BarPro{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="section__title">Калькулятор стоимости</h1>
+        <p class="section__subtitle">Рассчитайте стоимость выездного бара за 1 минуту</p>
+
+        <div class="calculator">
+            <div class="calculator__form">
+                <div class="calc-group">
+                    <label class="calc-label">Количество гостей</label>
+                    <input type="range" id="guests" min="10" max="200" value="50" class="calc-range">
+                    <div class="calc-value"><span id="guestsValue">50</span> чел.</div>
+                </div>
+
+                <div class="calc-group">
+                    <label class="calc-label">Длительность мероприятия (часы)</label>
+                    <input type="range" id="hours" min="2" max="10" value="4" class="calc-range">
+                    <div class="calc-value"><span id="hoursValue">4</span> ч.</div>
+                </div>
+
+                <div class="calc-group">
+                    <label class="calc-label">Количество коктейлей на человека</label>
+                    <input type="range" id="cocktailsPerPerson" min="3" max="15" value="5" class="calc-range">
+                    <div class="calc-value"><span id="cocktailsPerPersonValue">5</span> шт.</div>
+                </div>
+
+                <div class="calc-group">
+                    <label class="calc-label">Дополнительные услуги</label>
+                    <div id="addonServices" class="calc-addons">
+                        {% for service in addon_services %}
+                        <label class="calc-addon">
+                            <input type="checkbox" value="{{ service.id }}" data-price="{{ service.price }}">
+                            <span class="calc-addon__name">{{ service.name }}</span>
+                            <span class="calc-addon__price">+{{ service.price|floatformat:0 }} ₽</span>
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="calc-result">
+                    <div class="calc-result__total">
+                        <span>Итого:</span>
+                        <strong id="totalPrice">0 ₽</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculator__lead">
+                <h3>Оставить заявку</h3>
+                <p>Заполните форму и мы свяжемся с вами для уточнения деталей</p>
+
+                <form id="leadForm" class="lead-form">
+                    {% csrf_token %}
+                    <input type="hidden" id="calcData" name="calc_data">
+                    <input type="hidden" id="totalSum" name="total_sum">
+
+                    <div class="lead-form__group">
+                        <input type="text" name="name" id="leadName" placeholder="Ваше имя *" required class="lead-form__input">
+                    </div>
+
+                    <div class="lead-form__group">
+                        <input type="tel" name="phone" id="leadPhone" placeholder="Телефон *" required class="lead-form__input">
+                    </div>
+
+                    <div class="lead-form__group">
+                        <input type="email" name="email" id="leadEmail" placeholder="Email" class="lead-form__input">
+                    </div>
+
+                    <div class="lead-form__group">
+                        <input type="date" name="event_date" id="leadEventDate" class="lead-form__input">
+                    </div>
+
+                    <div class="lead-form__group">
+                        <textarea name="message" id="leadMessage" placeholder="Комментарий" rows="3" class="lead-form__textarea"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--lg btn--block" id="submitBtn">
+                        Отправить заявку
+                    </button>
+
+                    <div id="formMessage" class="lead-form__message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/calculator.js' %}"></script>
+{% endblock %}

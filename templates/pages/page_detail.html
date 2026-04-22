@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page.title|default:"BarPro — Выездной бар" }}{% endblock %}
+
+{% block content %}
+{% for block in blocks %}
+    {% if block.block_type == 'hero' %}
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">{{ block.title }}</h1>
+                <div class="hero__text">{{ block.content|linebreaks }}</div>
+                <a href="/calculator/" class="btn btn--primary btn--lg">Рассчитать стоимость</a>
+            </div>
+        </div>
+        {% if block.image %}
+        <div class="hero__bg" style="background-image: url('{{ block.image.url }}')"></div>
+        {% endif %}
+    </section>
+
+    {% elif block.block_type == 'text' %}
+    <section class="section">
+        <div class="container">
+            <h2 class="section__title">{{ block.title }}</h2>
+            <div class="section__content">{{ block.content|linebreaks }}</div>
+        </div>
+    </section>
+
+    {% elif block.block_type == 'text_with_image' %}
+    <section class="section section--gray">
+        <div class="container">
+            <div class="text-image-block">
+                {% if block.image %}
+                <div class="text-image-block__image">
+                    <img src="{{ block.image.url }}" alt="{{ block.title }}">
+                </div>
+                {% endif %}
+                <div class="text-image-block__content">
+                    <h2 class="section__title">{{ block.title }}</h2>
+                    <div class="section__content">{{ block.content|linebreaks }}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% elif block.block_type == 'gallery' %}
+    <section class="section">
+        <div class="container">
+            <h2 class="section__title">{{ block.title }}</h2>
+            <div class="gallery-grid">
+                {{ block.content|linebreaks }}
+            </div>
+        </div>
+    </section>
+
+    {% elif block.block_type == 'cta' %}
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta__title">{{ block.title }}</h2>
+            <div class="cta__text">{{ block.content|linebreaks }}</div>
+            <a href="/calculator/" class="btn btn--primary btn--lg">Рассчитать стоимость</a>
+        </div>
+    </section>
+    {% endif %}
+{% empty %}
+    {% if is_home %}
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">Выездной бар на ваше мероприятие</h1>
+                <p class="hero__text">Профессиональные бармены, авторские коктейли и полное обслуживание. Сделаем ваш праздник незабываемым!</p>
+                <a href="/calculator/" class="btn btn--primary btn--lg">Рассчитать стоимость</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section__title">Почему выбирают нас</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">🍸</div>
+                    <h3 class="feature-card__title">Авторские коктейли</h3>
+                    <p class="feature-card__text">Уникальные рецепты, разработанные нашими барменами</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">👨‍🍳</div>
+                    <h3 class="feature-card__title">Профессиональные бармены</h3>
+                    <p class="feature-card__text">Опыт работы на мероприятиях от 5 лет</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🎉</div>
+                    <h3 class="feature-card__title">Любые мероприятия</h3>
+                    <p class="feature-card__text">Свадьбы, корпоративы, дни рождения, вечеринки</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta__title">Готовы заказать выездной бар?</h2>
+            <p class="cta__text">Рассчитайте стоимость за 1 минуту с помощью нашего калькулятора</p>
+            <a href="/calculator/" class="btn btn--primary btn--lg">Рассчитать стоимость</a>
+        </div>
+    </section>
+    {% else %}
+    <section class="section">
+        <div class="container">
+            <h1>Страница не найдена</h1>
+            <p>Информация на этой странице временно недоступна.</p>
+            <a href="/" class="btn btn--primary">На главную</a>
+        </div>
+    </section>
+    {% endif %}
+{% endfor %}
+{% endblock %}

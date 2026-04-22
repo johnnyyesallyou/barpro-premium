@@ -1,0 +1,42 @@
+{% load static %}
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <div class="footer__col">
+                <a href="/" class="footer__logo">
+                    <span class="footer__logo-text">Bar</span><span class="footer__logo-accent">Pro</span>
+                </a>
+                <p class="footer__desc">Профессиональный выездной бар на корпоративы, свадьбы и частные мероприятия.</p>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__title">Навигация</h4>
+                <nav>
+                    <a href="/menu/" class="footer__link">Меню</a>
+                    <a href="/packages/" class="footer__link">Пакеты</a>
+                    <a href="/cases/" class="footer__link">Кейсы</a>
+                    <a href="/calculator/" class="footer__link">Калькулятор</a>
+                </nav>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__title">Контакты</h4>
+                <a href="tel:+79991234567" class="footer__link">+7 (999) 123-45-67</a>
+                <a href="mailto:info@barpro.ru" class="footer__link">info@barpro.ru</a>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__title">Соцсети</h4>
+                <div class="footer__socials">
+                    <a href="#" class="footer__social" aria-label="Telegram">TG</a>
+                    <a href="#" class="footer__social" aria-label="VKontakte">VK</a>
+                    <a href="#" class="footer__social" aria-label="Instagram">IG</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>&copy; {% now "Y" %} BarPro. Все права защищены.</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Наши кейсы — BarPro{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="section__title">Наши кейсы</h1>
+        <p class="section__subtitle">Мероприятия, которые мы провели</p>
+
+        <div class="cases-grid">
+            {% for case in cases %}
+            <a href="/cases/{{ case.id }}/" class="case-card">
+                {% with case.caseimage_set.first as cover %}
+                {% if cover %}
+                <div class="case-card__image">
+                    <img src="{{ cover.image.url }}" alt="{{ case.title }}">
+                </div>
+                {% endif %}
+                {% endwith %}
+
+                <div class="case-card__body">
+                    <h3 class="case-card__title">{{ case.title }}</h3>
+                    <div class="case-card__meta">
+                        <span>📅 {{ case.date|date:"d.m.Y" }}</span>
+                        <span>👥 {{ case.guests_count }} гостей</span>
+                    </div>
+                    <p class="case-card__desc">{{ case.description|truncatewords:20 }}</p>
+                </div>
+            </a>
+            {% empty %}
+            <p>Кейсы пока не добавлены.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

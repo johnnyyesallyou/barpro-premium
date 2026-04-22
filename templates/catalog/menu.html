@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Меню коктейлей — BarPro{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="section__title">Меню коктейлей</h1>
+        <p class="section__subtitle">Наши авторские коктейли для вашего мероприятия</p>
+
+        <div class="menu-tabs">
+            <button class="menu-tab active" data-filter="all">Все</button>
+            <button class="menu-tab" data-filter="classic">Классические</button>
+            <button class="menu-tab" data-filter="author">Авторские</button>
+            <button class="menu-tab" data-filter="nonalco">Безалкогольные</button>
+        </div>
+
+        <div class="menu-grid">
+            {% for cocktail in cocktails %}
+            <div class="menu-card" data-type="{{ cocktail.type }}">
+                
+                <!-- ФОТО КОКТЕЙЛЯ -->
+                {% if cocktail.image %}
+                <div class="menu-card__image">
+                    <img src="{{ cocktail.image.url }}" alt="{{ cocktail.name }}">
+                </div>
+                {% endif %}
+
+                <div class="menu-card__header">
+                    <h3 class="menu-card__name">{{ cocktail.name }}</h3>
+                    {% if cocktail.strength %}
+                    <span class="menu-card__strength">{{ cocktail.strength }}%</span>
+                    {% endif %}
+                </div>
+                
+                {% if cocktail.composition %}
+                <p class="menu-card__composition">{{ cocktail.composition }}</p>
+                {% endif %}
+                
+                <div class="menu-card__price">{{ cocktail.price|floatformat:0 }} ₽</div>
+            </div>
+            {% empty %}
+            <p>Меню пока не добавлено.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+document.querySelectorAll('.menu-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        document.querySelectorAll('.menu-card').forEach(card => {
+            if (filter === 'all' || card.dataset.type === filter) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

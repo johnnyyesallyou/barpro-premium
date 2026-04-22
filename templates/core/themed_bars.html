@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Тематические бары — BarPro Premium{% endblock %}
+
+{% block content %}
+<section class="hero" style="min-height: 50vh;">
+    <div class="hero__content">
+        <h1 class="hero__title">Тематические бары</h1>
+        <p class="hero__subtitle">10+ уникальных концепций для вашего мероприятия</p>
+    </div>
+</section>
+
+<section class="section">
+            <div class="cards-grid">
+        {% for bar in themed_bars %}
+        <div class="card" style="display: flex; flex-direction: column; height: 100%;">
+            {% if bar.image %}
+            <div style="width: 100%; height: 220px; overflow: hidden; border-radius: 12px; margin-bottom: 1.2rem;">
+                <img src="{{ bar.image.url }}" alt="{{ bar.name }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+            </div>
+            {% else %}
+            <div class="card-icon" style="font-size: 4rem; text-align: center; margin-bottom: 1.2rem; color: var(--gold-primary);">🍹</div>
+            {% endif %}
+
+            <h3 class="card-title">{{ bar.name }}</h3>
+            <p style="flex-grow: 1; margin-bottom: 1.5rem;">{{ bar.description }}</p>
+            
+            <div class="card-price" style="margin-top: auto;">
+                {% if bar.price %}
+                    от {{ bar.price|floatformat:0 }} ₽
+                {% else %}
+                    По запросу
+                {% endif %}
+            </div>
+            
+            <a href="{% url 'calculator:calculator' %}" class="btn btn-primary" style="margin-top: 1.2rem; width: 100%;">Заказать</a>
+        </div>
+        {% empty %}
+        <p style="text-align: center; color: var(--gray-text); grid-column: 1/-1;">Тематические бары скоро появятся.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section section-dark">
+    <h2 class="section-title">Почему выбирают тематические бары?</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-icon">🎨</div>
+            <h3 class="card-title">Полное погружение</h3>
+            <p>Не просто коктейли, а целая концепция: стилизация стойки, тематические названия, специальная подача</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title">Под вашу аудиторию</h3>
+            <p>Детский бар для семейного праздника, крио-бар для wow-эффекта, винный бар для премиум гостей</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">💡</div>
+            <h3 class="card-title">Уникальность</h3>
+            <p>Тематический бар делает мероприятие запоминающимся. Гости будут обсуждать это еще долго</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">📸</div>
+            <h3 class="card-title">Фотозона</h3>
+            <p>Стилизованная барная зона становится центром внимания и идеальным местом для фото</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎁</div>
+            <h3 class="card-title">Готовое решение</h3>
+            <p>Мы привозим все необходимое: оборудование, декор, специальную посуду, тематические ингредиенты</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3 class="card-title">Быстрый setup</h3>
+            <p>Монтаж любого бара — 30-40 минут. Демонтаж — 20 минут. Минимум хлопот для вас</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Популярные комбинации</h2>
+    <p style="text-align: center; color: var(--gray-text); margin-bottom: 3rem;">Объедините несколько баров для большого мероприятия</p>
+    <div class="pricing-grid">
+        <div class="pricing-card">
+            <div class="pricing-badge">Для корпоратива</div>
+            <h3>Коктейльный + Крио-бар</h3>
+            <p style="margin: 2rem 0;">Классические коктейли для всех + wow-эффект с жидким азотом для VIP гостей</p>
+            <div class="card-price">от 80,000₽</div>
+        </div>
+        <div class="pricing-card featured">
+            <div class="pricing-badge">Для свадьбы</div>
+            <h3>Мохито + Винный-бар</h3>
+            <p style="margin: 2rem 0;">Освежающие мохито для танцпола + премиум вина для фуршета и банкета</p>
+            <div class="card-price">от 45,000₽</div>
+        </div>
+        <div class="pricing-card">
+            <div class="pricing-badge">Для фестиваля</div>
+            <h3>Пивной + Детский-бар</h3>
+            <p style="margin: 2rem 0;">Крафтовое пиво для взрослых + безалкогольные коктейли для детей</p>
+            <div class="card-price">от 30,000₽</div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-dark" style="text-align: center; padding: 5rem 2rem;">
+    <h2 style="font-size: 3rem; margin-bottom: 1rem;">Создайте уникальную атмосферу</h2>
+    <p style="font-size: 1.2rem; color: var(--gray-text); margin-bottom: 2rem;">Рассчитайте стоимость тематического бара для вашего мероприятия</p>
+    <a href="{% url 'calculator:calculator' %}" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Калькулятор стоимости</a>
+</section>
+{% endblock %}

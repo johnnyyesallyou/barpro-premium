@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Пакеты услуг — BarPro{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="section__title">Пакеты услуг</h1>
+        <p class="section__subtitle">Выберите готовый пакет для вашего мероприятия</p>
+
+        <div class="packages-grid">
+            {% for package in packages %}
+            <div class="package-card {% if package.is_popular %}package-card--popular{% endif %}">
+                {% if package.is_popular %}
+                <div class="package-card__badge">Популярный</div>
+                {% endif %}
+
+                {% if package.image %}
+                <div class="package-card__image">
+                    <img src="{{ package.image.url }}" alt="{{ package.name }}">
+                </div>
+                {% endif %}
+
+                <div class="package-card__body">
+                    <h3 class="package-card__title">{{ package.name }}</h3>
+                    <p class="package-card__desc">{{ package.description|safe }}</p>
+
+                    {% if package.cocktails.all %}
+                    <div class="package-card__cocktails">
+                        <h4>Входит в пакет:</h4>
+                        <ul>
+                            {% for pc in package.packagecocktail_set.all %}
+                            <li>{{ pc.cocktail.name }} — {{ pc.portions }} порц.</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                    <div class="package-card__price">
+                        <span class="package-card__price-value">{{ package.price|floatformat:0 }} ₽</span>
+                    </div>
+
+                    <a href="/calculator/" class="btn btn--primary btn--block">Заказать</a>
+                </div>
+            </div>
+            {% empty %}
+            <p>Пакеты услуг пока не добавлены.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

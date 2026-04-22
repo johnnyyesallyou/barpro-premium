@@ -1,0 +1,772 @@
+/* BarPro Premium Edition - Dark Theme + Gold Accents */
+/* Inspired by mosbar.vip, bar-vip.ru, tvoy-bar.ru */
+
+:root {
+    /* Премиум цветовая палитра */
+    --dark-bg: #0a0a0a;
+    --dark-secondary: #1a1a1a;
+    --dark-tertiary: #2a2a2a;
+    --gold-primary: #d4af37;
+    --gold-light: #f4d03f;
+    --gold-dark: #c19a2e;
+    --white-text: #ffffff;
+    --gray-text: #b8b8b8;
+    --accent-red: #dc2626;
+    
+    /* Шрифты */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Jost', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--dark-bg);
+    color: var(--white-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   ТИПОГРАФИЯ
+   =========================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--gold-primary);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    color: var(--gray-text);
+    margin-bottom: 1rem;
+}
+
+/* ===========================
+   HEADER & NAVIGATION
+   =========================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--gold-primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--white-text);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold-primary);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+}
+
+.hero__content {
+    text-align: center;
+    z-index: 2;
+    max-width: 900px;
+    padding: 2rem;
+}
+
+.hero__title {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero__subtitle {
+    font-size: 1.5rem;
+    color: var(--gray-text);
+    margin-bottom: 2rem;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-body);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+    color: var(--dark-bg);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--gold-primary);
+    color: var(--gold-primary);
+}
+
+.btn-outline:hover {
+    background: var(--gold-primary);
+    color: var(--dark-bg);
+}
+
+/* ===========================
+   SECTION STYLES
+   =========================== */
+
+.section {
+    padding: 6rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-dark {
+    background: var(--dark-secondary);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--gold-primary);
+    margin: 1rem auto 0;
+}
+
+/* ===========================
+   CARDS
+   =========================== */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background: var(--dark-secondary);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--gold-primary);
+}
+
+.card-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white-text);
+    margin: 1rem 0;
+}
+
+/* ===========================
+   PRICING TIERS
+   =========================== */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.pricing-card {
+    background: var(--dark-secondary);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 2px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.pricing-card:hover::before {
+    opacity: 1;
+}
+
+.pricing-card.featured {
+    border-color: var(--gold-primary);
+    transform: scale(1.05);
+}
+
+.pricing-badge {
+    display: inline-block;
+    background: var(--gold-primary);
+    color: var(--dark-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* ===========================
+   TEAM SECTION
+   =========================== */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--gold-primary);
+}
+
+.team-name {
+    font-size: 1.5rem;
+    color: var(--gold-primary);
+    margin-bottom: 0.5rem;
+}
+
+.team-role {
+    color: var(--gray-text);
+    margin-bottom: 1rem;
+}
+
+/* ===========================
+   GALLERY
+   =========================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* ===========================
+   CLIENTS LOGOS
+   =========================== */
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: center;
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    filter: grayscale(100%);
+}
+
+.client-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.client-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===========================
+   FAQ SECTION
+   =========================== */
+
+.faq-list {
+    max-width: 800px;
+    margin: 3rem auto 0;
+}
+
+.faq-item {
+    background: var(--dark-secondary);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--gold-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--gray-text);
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+.footer {
+    background: var(--dark-secondary);
+    padding: 4rem 2rem 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1.5rem;
+}
+
+.footer-link {
+    display: block;
+    color: var(--gray-text);
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--gold-primary);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 3rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    text-align: center;
+    color: var(--gray-text);
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .hero__title {
+        font-size: 3rem;
+    }
+    
+    .section {
+        padding: 4rem 1rem;
+    }
+    
+    .cards-grid,
+    .pricing-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+/* ===== VIDEO BACKGROUND ===== */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: none; /* Убираем старый градиент */
+}
+
+.hero__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none; /* Чтобы видео не перехватывало клики */
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10,10,10,0.85) 0%, rgba(20,20,20,0.6) 100%);
+    z-index: 1;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    /* Остальные стили hero__content остаются без изменений */
+}
+
+/* Мобильная адаптация: отключаем видео на слабых устройствах */
+/* ===========================
+RESPONSIVE (МОБИЛЬНАЯ ВЕРСИЯ)
+=========================== */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .hero__title { font-size: 3rem; }
+    .section { padding: 4rem 1rem; }
+    .cards-grid, .pricing-grid, .team-grid { grid-template-columns: 1fr; }
+
+    /* Шапка */
+    .navbar {
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    /* Кнопка-бургер */
+    .header__burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        padding: 0;
+    }
+    .header__burger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--gold-primary);
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+    /* Анимация бургера при открытии */
+    .header__burger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .header__burger.active span:nth-child(2) { opacity: 0; }
+    .header__burger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    /* Меню: скрыто по умолчанию */
+    .nav-menu {
+        display: none; /* 🔑 Ключевое исправление */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--dark-secondary);
+        border-top: 1px solid rgba(212, 175, 55, 0.1);
+        flex-direction: column;
+        padding: 0;
+        list-style: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        z-index: 1001;
+    }
+
+    /* Меню: показываем по клику */
+    .nav-menu.active {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav-menu li:last-child { border-bottom: none; }
+
+    .nav-menu .nav-link {
+        display: block;
+        padding: 1.2rem 1.5rem;
+        font-size: 1.05rem;
+        width: 100%;
+    }
+    .nav-menu .nav-link::after { display: none; } /* Убираем подчеркивание на мобилке */
+
+    /* Кнопка калькулятора в мобильном меню */
+    .navbar .btn {
+        margin-top: 0.5rem;
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* ===== CALCULATOR: Dark Theme Fix ===== */
+.calculator__form,
+.calculator__lead {
+    background: var(--dark-secondary) !important;
+    color: var(--white-text) !important;
+}
+
+.calculator .calc-label {
+    color: var(--gold-primary) !important;
+}
+
+.calculator .calc-value {
+    color: var(--gold-light) !important;
+}
+
+.calculator .calc-addon {
+    background: var(--dark-tertiary) !important;
+    color: var(--gray-text) !important;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.calculator .calc-addon:hover {
+    background: var(--dark-bg) !important;
+    border-color: var(--gold-primary);
+}
+
+.calculator .calc-addon input:checked + .calc-addon__name {
+    color: var(--gold-primary) !important;
+}
+
+.calculator .calc-result {
+    background: linear-gradient(135deg, var(--gold-primary), var(--gold-light)) !important;
+    color: var(--dark-bg) !important;
+}
+
+.calculator .lead-form__input,
+.calculator .lead-form__textarea {
+    background: var(--dark-tertiary) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    color: var(--white-text) !important;
+}
+
+.calculator .lead-form__input::placeholder,
+.calculator .lead-form__textarea::placeholder {
+    color: var(--gray-text) !important;
+}
+
+.calculator .btn-primary {
+    background: linear-gradient(135deg, var(--gold-primary), var(--gold-light)) !important;
+    color: var(--dark-bg) !important;
+}
+/* ===== FIX: Отступ для контента под фиксированным хедером ===== */
+
+/* 1. Отступ для первой секции на любой странице */
+.section:first-of-type {
+    padding-top: 8rem; /* Компенсирует высоту хедера (~100px) */
+}
+
+/* 2. Плавный скролл к якорям с учётом хедера */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Высота хедера + небольшой запас */
+}
+
+/* 3. Если заголовок — цель якоря (например, при переходе по ссылкам) */
+.section__title:target,
+h1.section__title {
+    scroll-margin-top: 120px;
+}
+
+/* 4. Специально для страницы пакетов (если нужно точечно) */
+body.packages-page .section:first-of-type {
+    padding-top: 7rem;
+}

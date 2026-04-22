@@ -1,0 +1,171 @@
+[
+{
+  "model": "catalog.teammember",
+  "pk": 1,
+  "fields": {
+    "name": "Antonio Montana",
+    "role": "Мастер флейринга",
+    "bio": "Мастер флейринга международного уровня. Его искусство покорило не одну страну. Лед в его бокалах зажигает души!",
+    "experience_years": 12,
+    "specialization": "Флейринг, барменское шоу, акробатические трюки",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.teammember",
+  "pk": 2,
+  "fields": {
+    "name": "Андрей",
+    "role": "Эксперт классических коктейлей",
+    "bio": "Он приготовит любой классический коктейль. Легко импровизирует и задает моду. Его шоу ждут во всех барах Москвы!",
+    "experience_years": 10,
+    "specialization": "Классические коктейли, миксология, импровизация",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.teammember",
+  "pk": 3,
+  "fields": {
+    "name": "Антон",
+    "role": "ТОП-10 барменов России",
+    "bio": "Входит в десятку лучших барменов России. Его коктейли полны любви и радости. Среди барменов он настоящий аристократ.",
+    "experience_years": 11,
+    "specialization": "Премиум коктейли, авторские рецепты, конкурсы",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.teammember",
+  "pk": 4,
+  "fields": {
+    "name": "Вадим",
+    "role": "Барменеджер",
+    "bio": "Способен организовать шоу из ничего. Изучил барную культуру от А до Я. Знает, как строить карьеру звезды с нуля.",
+    "experience_years": 15,
+    "specialization": "Менеджмент, организация мероприятий, логистика",
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.teammember",
+  "pk": 5,
+  "fields": {
+    "name": "Виталий",
+    "role": "Специалист авторских коктейлей",
+    "bio": "Превращает барную классику в новые тренды. Его коктейли – это шедевры вкуса. Он бесконечно предан флейрингу.",
+    "experience_years": 9,
+    "specialization": "Авторские коктейли, молекулярная миксология, флейринг",
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.teammember",
+  "pk": 6,
+  "fields": {
+    "name": "Дмитрий",
+    "role": "Чемпион по флейрингу",
+    "bio": "Флейринг – его вторая жизнь. Ко льду в бокалы он добавляет любовь. Его шоу – это фейерверк коктейлей и счастья!",
+    "experience_years": 8,
+    "specialization": "Флейринг, шоу-программы, обучение",
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.teammember",
+  "pk": 7,
+  "fields": {
+    "name": "Евгений",
+    "role": "3х чемпион России",
+    "bio": "Трижды чемпион России по флейрингу. Его коктейли покорили 23 страны. Стремительный и неповторимый.",
+    "experience_years": 13,
+    "specialization": "Флейринг международного уровня, жонглирование",
+    "order": 7,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.teammember",
+  "pk": 8,
+  "fields": {
+    "name": "Макс",
+    "role": "Коктейльный виртуоз",
+    "bio": "Смешает любой коктейль с закрытыми глазами. Не представляет свою жизнь без флейринга.",
+    "experience_years": 7,
+    "specialization": "Скоростное приготовление, флейринг, классика",
+    "order": 8,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.loyaltylevel",
+  "pk": 1,
+  "fields": {
+    "cocktails_count": 100,
+    "gift_name": "Пирамида из 56 бокалов",
+    "gift_description": "Эффектная пирамида из бокалов шампанского с подсветкой и сухим льдом",
+    "gift_value": "13000.00",
+    "icon": "🥂",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.loyaltylevel",
+  "pk": 2,
+  "fields": {
+    "cocktails_count": 200,
+    "gift_name": "Бармен-шоу 30 минут",
+    "gift_description": "Профессиональное флейринг шоу от мастера с трюками и жонглированием",
+    "gift_value": "35000.00",
+    "icon": "🤹",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.loyaltylevel",
+  "pk": 3,
+  "fields": {
+    "cocktails_count": 300,
+    "gift_name": "Скидка 10% на следующий заказ",
+    "gift_description": "Постоянная скидка 10% на все последующие заказы",
+    "gift_value": "0.00",
+    "icon": "💎",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.loyaltylevel",
+  "pk": 4,
+  "fields": {
+    "cocktails_count": 500,
+    "gift_name": "200 шотов в подарок",
+    "gift_description": "200 премиальных шотов на выбор для вашего мероприятия",
+    "gift_value": "25000.00",
+    "icon": "🍾",
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.loyaltylevel",
+  "pk": 5,
+  "fields": {
+    "cocktails_count": 1000,
+    "gift_name": "Эксклюзивные бонусы",
+    "gift_description": "VIP статус, приоритетное обслуживание, индивидуальные условия",
+    "gift_value": "0.00",
+    "icon": "👑",
+    "order": 5,
+    "is_active": true
+  }
+}
+]

@@ -1,0 +1,162 @@
+[
+{
+  "model": "catalog.addonservice",
+  "pk": 1,
+  "fields": {"name": "Мохито-бар", "price": "15000.00", "description": "Специализированный бар с 5 видами мохито: классический, клубничный, маракуйя, арбузный, манго. Стилизация в карибском стиле", "category": "themed_bar", "icon": "🍹", "order": 1, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 2,
+  "fields": {"name": "Текила-бар", "price": "18000.00", "description": "Премиальная текила Olmeca, Don Julio. 8 коктейлей на основе текилы + лаймы и соль", "category": "themed_bar", "icon": "🌵", "order": 2, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 3,
+  "fields": {"name": "Пивной-бар", "price": "20000.00", "description": "Крафтовое пиво 6 сортов на выбор. Барная стойка с кранами, пивные бокалы", "category": "themed_bar", "icon": "🍺", "order": 3, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 4,
+  "fields": {"name": "Кофейный-бар", "price": "12000.00", "description": "Профессиональная кофемашина, бариста. Эспрессо, капучино, латте, раф-кофе", "category": "themed_bar", "icon": "☕", "order": 4, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 5,
+  "fields": {"name": "Детокс-бар", "price": "14000.00", "description": "Свежие соки, смузи, детокс-коктейли. Органические ингредиенты, суперфуды", "category": "themed_bar", "icon": "🥗", "order": 5, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 6,
+  "fields": {"name": "Детский-бар", "price": "10000.00", "description": "Безалкогольные коктейли с трубочками и зонтиками. Молочные коктейли, лимонады", "category": "themed_bar", "icon": "🧃", "order": 6, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 7,
+  "fields": {"name": "Крио-бар", "price": "25000.00", "description": "Жидкий азот, молекулярные коктейли, дымовые эффекты. Wow-фактор гарантирован", "category": "themed_bar", "icon": "❄️", "order": 7, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 8,
+  "fields": {"name": "Смузи-бар", "price": "13000.00", "description": "Свежие ягоды, фрукты, овощи. Блендер Vitamix. 15+ видов смузи", "category": "themed_bar", "icon": "🍓", "order": 8, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 9,
+  "fields": {"name": "Фреш-бар", "price": "15000.00", "description": "Свежевыжатые соки. Профессиональная соковыжималка. Цитрусовые, яблоки, морковь", "category": "themed_bar", "icon": "🍊", "order": 9, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 10,
+  "fields": {"name": "Винный-бар", "price": "30000.00", "description": "Сомелье, дегустация вин. Красные, белые, розовые. Винные бокалы премиум", "category": "themed_bar", "icon": "🍷", "order": 10, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 11,
+  "fields": {"name": "Флейринг Шоу", "price": "35000.00", "description": "Бармен-виртуоз. Жонглирование бутылками, каскадные трюки, динамичная программа 30 минут", "category": "show", "icon": "🤹", "order": 1, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 12,
+  "fields": {"name": "Бармен Шоу Duo", "price": "60000.00", "description": "Два мастера флейринга. Синхронное шоу, танец с бутылками. 40 минут", "category": "show", "icon": "👯", "order": 2, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 13,
+  "fields": {"name": "Коктейльное Казино", "price": "20000.00", "description": "Гости угадывают ингредиенты, крепость, происхождение коктейлей. Фишки, призы", "category": "show", "icon": "🎰", "order": 3, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 14,
+  "fields": {"name": "Винное Казино", "price": "25000.00", "description": "Дегустация вслепую. Сомелье ведущий. Угадывание сортов, регионов, годов урожая", "category": "show", "icon": "🍇", "order": 4, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 15,
+  "fields": {"name": "Мастер-класс Коктейли", "price": "18000.00", "description": "Гости готовят 3-4 коктейля под руководством бармена. Рецепты выдаем", "category": "show", "icon": "🎓", "order": 5, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 16,
+  "fields": {"name": "Мастер-класс Настойки", "price": "22000.00", "description": "Создание собственных настоек 0.5л. Дегустация 2-3 вариантов", "category": "show", "icon": "🌿", "order": 6, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 17,
+  "fields": {"name": "Алко-тир", "price": "15000.00", "description": "Ледяные шоты, 4 мишени. Стрельба пробками. Азартный интерактив", "category": "show", "icon": "🎯", "order": 7, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 18,
+  "fields": {"name": "Бир-понг Турнир", "price": "12000.00", "description": "Классическая вечериночная игра. Столы, кубки, мячи. Командный формат", "category": "show", "icon": "🏓", "order": 8, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 19,
+  "fields": {"name": "Пирамида 56 бокалов", "price": "13000.00", "description": "Горка из бокалов шампанского. Эффектная подача, сухой лед, подсветка", "category": "show", "icon": "🥂", "order": 9, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 20,
+  "fields": {"name": "Пирамида 120 бокалов", "price": "20000.00", "description": "Грандиозная пирамида. 8 ярусов, 19 бутылок Moet. Фотозона", "category": "show", "icon": "🍾", "order": 10, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 21,
+  "fields": {"name": "Кальянный Кейтеринг", "price": "25000.00", "description": "Lounge-зона. Персональный кальянщик. Авторские вкусы. Обслуживание", "category": "show", "icon": "💨", "order": 11, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 22,
+  "fields": {"name": "Текила-герл Промо", "price": "18000.00", "description": "Промо-анимация. Яркая подача текилы и шотов. Создание движения", "category": "show", "icon": "💃", "order": 12, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 23,
+  "fields": {"name": "DJ-сет Ambient", "price": "30000.00", "description": "DJ под барную атмосферу. Мягкий саунд, правильный ритм события", "category": "show", "icon": "🎧", "order": 13, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 24,
+  "fields": {"name": "Fire Show", "price": "40000.00", "description": "Огненное шоу. Файер-артист. Работа с огнем, барменские трюки с пламенем", "category": "show", "icon": "🔥", "order": 14, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 25,
+  "fields": {"name": "Ведущий Мероприятия", "price": "50000.00", "description": "Профессиональный ведущий на 4 часа. Сценарий, конкурсы, вовлечение гостей", "category": "additional", "icon": "🎤", "order": 1, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 26,
+  "fields": {"name": "Фотограф 4 часа", "price": "25000.00", "description": "Профессиональная фотосъемка. 300+ обработанных фотографий. Портфолио", "category": "additional", "icon": "📸", "order": 2, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 27,
+  "fields": {"name": "Видеограф Full HD", "price": "35000.00", "description": "Видеосъемка мероприятия. Монтаж, цветокоррекция. Итоговый ролик 10-15 мин", "category": "additional", "icon": "🎥", "order": 3, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 28,
+  "fields": {"name": "Официанты 2 чел", "price": "12000.00", "description": "Обслуживание гостей. Подача напитков, уборка. Униформа", "category": "additional", "icon": "🤵", "order": 4, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 29,
+  "fields": {"name": "Барная стойка 2м", "price": "8000.00", "description": "Профессиональная барная стойка. LED-подсветка. Брендирование", "category": "equipment", "icon": "🏪", "order": 1, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 30,
+  "fields": {"name": "Барная стойка 4м", "price": "15000.00", "description": "Большая барная стойка. LED-подсветка, логотип компании. Зона на 2 бармена", "category": "equipment", "icon": "🏬", "order": 2, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 31,
+  "fields": {"name": "Кофемашина La Marzocco", "price": "10000.00", "description": "Профессиональная кофемашина премиум-класса. Зерна Lavazza", "category": "equipment", "icon": "☕", "order": 3, "is_active_in_calc": true}
+},
+{
+  "model": "catalog.addonservice",
+  "pk": 32,
+  "fields": {"name": "Декор Премиум", "price": "18000.00", "description": "Стилизация барной зоны под тематику мероприятия. Цветы, свет, драпировка", "category": "equipment", "icon": "✨", "order": 4, "is_active_in_calc": true}
+}
+]

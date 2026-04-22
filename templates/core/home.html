@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}BarPro Premium — Выездной бар под ключ{% endblock %}
+
+{% block content %}
+<!-- ==========================================
+     HERO СЕКЦИЯ С ВИДЕО-ФОНОМ
+     ========================================== -->
+<section class="hero">
+    <video autoplay muted loop playsinline class="hero__video" poster="{% static 'img/hero-fallback.jpg' %}">
+        <source src="{% static 'video/hero-bg.mp4' %}" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+        <h1 class="hero__title">Эстетичный выездной бар<br>премиум-класса</h1>
+        <p class="hero__subtitle">50+ коктейлей • 14 шоу-программ • Программа лояльности</p>
+        <div class="hero__buttons">
+            <a href="{% url 'calculator:calculator' %}" class="btn btn-primary">Рассчитать стоимость</a>
+            <a href="#packages" class="btn btn-outline">Смотреть тарифы</a>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     ТАРИФЫ (PACKAGES)
+     ========================================== -->
+<section id="packages" class="section">
+    <h2 class="section-title">Тарифы</h2>
+    <div class="pricing-grid">
+        {% for package in packages %}
+        <div class="pricing-card {% if package.is_popular %}featured{% endif %}">
+            {% if package.is_popular %}<div class="pricing-badge">Хит продаж</div>{% endif %}
+            <h3>{{ package.name }}</h3>
+            <p>{{ package.description }}</p>
+            <div class="card-price">{{ package.price|floatformat:0 }} ₽</div>
+            <a href="{% url 'calculator:calculator' %}" class="btn {% if package.is_popular %}btn-primary{% else %}btn-outline{% endif %}">Заказать</a>
+        </div>
+        {% empty %}
+        <!-- Статический фолбэк, если контекст пуст -->
+        <div class="pricing-card">
+            <h3>Classic</h3>
+            <p>Базовый набор коктейлей и барная стойка</p>
+            <div class="card-price">60 000 ₽</div>
+            <a href="{% url 'calculator:calculator' %}" class="btn btn-outline">Подробнее</a>
+        </div>
+        <div class="pricing-card featured">
+            <div class="pricing-badge">Популярный</div>
+            <h3>Premium</h3>
+            <p>Расширенное меню + бармен-шоу</p>
+            <div class="card-price">100 000 ₽</div>
+            <a href="{% url 'calculator:calculator' %}" class="btn btn-primary">Заказать</a>
+        </div>
+        <div class="pricing-card">
+            <h3>VIP</h3>
+            <p>Максимальный ассортимент + премиум алкоголь</p>
+            <div class="card-price">150 000 ₽</div>
+            <a href="{% url 'calculator:calculator' %}" class="btn btn-outline">Подробнее</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ==========================================
+     ПОПУЛЯРНЫЕ КОКТЕЙЛИ
+     ========================================== -->
+<section class="section section-dark">
+    <h2 class="section-title">Популярные коктейли</h2>
+    <div class="cards-grid">
+        {% for cocktail in cocktails %}
+        {% if forloop.counter <= 6 %}
+        <div class="card">
+            {% if cocktail.image %}
+            <div style="width: 100%; height: 200px; overflow: hidden; border-radius: 12px; margin-bottom: 1rem;">
+                <img src="{{ cocktail.image.url }}" alt="{{ cocktail.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            {% endif %}
+            <h3 class="card-title">{{ cocktail.name }}</h3>
+            <p>{{ cocktail.composition|truncatewords:15 }}</p>
+            <div class="card-price">{{ cocktail.price|floatformat:0 }} ₽</div>
+        </div>
+        {% endif %}
+        {% empty %}
+        <p style="text-align:center; grid-column:1/-1; color:var(--gray-text);">Меню скоро появится</p>
+        {% endfor %}
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+        <a href="{% url 'catalog:menu' %}" class="btn btn-outline">Смотреть всё меню</a>
+    </div>
+</section>
+
+<!-- ==========================================
+     ТЕМАТИЧЕСКИЕ БАРЫ
+     ========================================== -->
+<section class="section">
+    <h2 class="section-title">Тематические бары</h2>
+    <div class="cards-grid">
+        {% for service in addon_services %}
+        {% if service.category == 'themed_bar' and forloop.counter <= 6 %}
+        <div class="card">
+            {% if service.image %}
+            <div style="width: 100%; height: 200px; overflow: hidden; border-radius: 12px; margin-bottom: 1rem;">
+                <img src="{{ service.image.url }}" alt="{{ service.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            {% else %}
+            <div class="card-icon">🍹</div>
+            {% endif %}
+            <h3 class="card-title">{{ service.name }}</h3>
+            <p>{{ service.description|truncatewords:12 }}</p>
+            <div class="card-price">{% if service.price %}от {{ service.price|floatformat:0 }} ₽{% else %}По запросу{% endif %}</div>
+        </div>
+        {% endif %}
+        {% empty %}
+        <p style="text-align:center; grid-column:1/-1; color:var(--gray-text);">Раздел в разработке</p>
+        {% endfor %}
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+        <a href="{% url 'core:bars' %}" class="btn btn-outline">Все тематические бары</a>
+    </div>
+</section>
+
+<!-- ==========================================
+     ШОУ-ПРОГРАММЫ
+     ========================================== -->
+<section class="section section-dark">
+    <h2 class="section-title">Шоу-программы</h2>
+    <div class="cards-grid">
+        {% for service in addon_services %}
+        {% if service.category == 'show' and forloop.counter <= 6 %}
+        <div class="card">
+            {% if service.image %}
+            <div style="width: 100%; height: 200px; overflow: hidden; border-radius: 12px; margin-bottom: 1rem;">
+                <img src="{{ service.image.url }}" alt="{{ service.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            {% else %}
+            <div class="card-icon">🎭</div>
+            {% endif %}
+            <h3 class="card-title">{{ service.name }}</h3>
+            <p>{{ service.description|truncatewords:12 }}</p>
+            <div class="card-price">{% if service.price %}от {{ service.price|floatformat:0 }} ₽{% else %}По запросу{% endif %}</div>
+        </div>
+        {% endif %}
+        {% empty %}
+        <p style="text-align:center; grid-column:1/-1; color:var(--gray-text);">Скоро добавим</p>
+        {% endfor %}
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+        <a href="{% url 'core:shows' %}" class="btn btn-outline">Все шоу-программы</a>
+    </div>
+</section>
+
+<!-- ==========================================
+     КОМАНДА
+     ========================================== -->
+<section class="section">
+    <h2 class="section-title">Наша команда</h2>
+    <div class="team-grid">
+        {% for member in team_members %}
+        {% if forloop.counter <= 4 %}
+        <div class="team-member">
+            {% if member.photo %}
+            <img src="{{ member.photo.url }}" alt="{{ member.name }}" class="team-photo">
+            {% else %}
+            <div class="team-photo" style="display:flex;align-items:center;justify-content:center;background:var(--dark-tertiary);font-size:3rem;">👨‍</div>
+            {% endif %}
+            <h3 class="team-name">{{ member.name }}</h3>
+            <p class="team-role">{{ member.role }}</p>
+            <p style="font-size:0.9rem; color:var(--gray-text);">Опыт: {{ member.experience_years }} лет</p>
+        </div>
+        {% endif %}
+        {% empty %}
+        <p style="text-align:center; grid-column:1/-1; color:var(--gray-text);">Команда формируется</p>
+        {% endfor %}
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+        <a href="{% url 'core:team' %}" class="btn btn-outline">Познакомиться со всеми</a>
+    </div>
+</section>
+
+<!-- ==========================================
+     ПРОГРАММА ЛОЯЛЬНОСТИ
+     ========================================== -->
+<section class="section section-dark">
+    <h2 class="section-title">Программа лояльности</h2>
+    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        {% for level in loyalty_levels %}
+        <div class="card" style="text-align:center;">
+            <div style="font-size:3rem; margin-bottom:0.5rem;">{{ level.icon }}</div>
+            <h3 class="card-title">{{ level.cocktails_count }}+</h3>
+            <p style="font-size:1.1rem; color:var(--white-text);">{{ level.gift_name }}</p>
+            <p style="font-size:0.9rem;">{{ level.gift_description }}</p>
+        </div>
+        {% empty %}
+        <div class="card" style="text-align:center;">
+            <div style="font-size:3rem;">🎁</div>
+            <h3 class="card-title">100+</h3>
+            <p>Подарок на выбор</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+        <a href="{% url 'core:loyalty' %}" class="btn btn-outline">Подробные условия</a>
+    </div>
+</section>
+
+<!-- ==========================================
+     FAQ (АККОРДЕОН)
+     ========================================== -->
+<section class="section">
+    <h2 class="section-title">Частые вопросы</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+            <div class="faq-question">Как происходит бронирование? <span>+</span></div>
+            <div class="faq-answer">Вы оставляете заявку через калькулятор или форму на сайте. Менеджер связывается в течение 15 минут для уточнения деталей и заключения договора.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Что входит в стоимость? <span>+</span></div>
+            <div class="faq-answer">В стоимость входит: аренда стойки, работа барменов, ингредиенты для коктейлей, посуда, декор и логистика по Москве. Алкоголь обсуждается отдельно.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Можно ли заказать бар без алкоголя? <span>+</span></div>
+            <div class="faq-answer">Да! У нас есть безалкогольные, смузи и детские бары с авторскими лимонадами и фрешами.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">За сколько дней нужно бронировать? <span>+</span></div>
+            <div class="faq-answer">Рекомендуем бронировать за 5-7 дней. В высокий сезон (декабрь, лето) — за 2-3 недели.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Работаете ли вы за пределами Москвы? <span>+</span></div>
+            <div class="faq-answer">Да, выезд возможен по Московской области и в регионы. Стоимость логистики рассчитывается индивидуально.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     CTA СЕКЦИЯ
+     ========================================== -->
+<section class="section section-dark" style="text-align: center; padding: 5rem 2rem;">
+    <h2 style="font-size: 3rem; margin-bottom: 1rem;">Создайте атмосферу вашего события</h2>
+    <p style="font-size: 1.2rem; color: var(--gray-text); margin-bottom: 2rem;">Рассчитайте стоимость за 2 минуты и получите скидку 10% на первый заказ</p>
+    <a href="{% url 'calculator:calculator' %}" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Рассчитать стоимость</a>
+</section>
+
+<!-- JS для FAQ аккордеона -->
+<script>
+document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const isActive = item.classList.contains('active');
+        // Закрываем все
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        // Открываем текущий, если был закрыт
+        if (!isActive) item.classList.add('active');
+    });
+});
+</script>
+{% endblock %}

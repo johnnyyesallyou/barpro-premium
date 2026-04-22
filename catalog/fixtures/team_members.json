@@ -1,0 +1,106 @@
+[
+  {
+    "model": "catalog.teammember",
+    "pk": 1,
+    "fields": {
+      "name": "Antonio Montana",
+      "role": "Мастер флейринга",
+      "bio": "Мастер флейринга международного уровня. Его искусство покорило не одну страну. Лед в его бокалах зажигает души!",
+      "experience_years": 15,
+      "specialization": "Флейринг, авторские коктейли",
+      "order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.teammember",
+    "pk": 2,
+    "fields": {
+      "name": "Андрей",
+      "role": "Бармен-виртуоз",
+      "bio": "С ним хотят работать все модные бары столицы. Он знает все классические коктейли. Но импровизация – это его конек.",
+      "experience_years": 12,
+      "specialization": "Классические коктейли",
+      "order": 2,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.teammember",
+    "pk": 3,
+    "fields": {
+      "name": "Антон",
+      "role": "ТОП-10 бармен России",
+      "bio": "Один из 10 лучших барменов России. Его улыбка зажигает лед и сердца. Он прирожденный шоумен и эстет.",
+      "experience_years": 10,
+      "specialization": "Шоу-программы",
+      "order": 3,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.teammember",
+    "pk": 4,
+    "fields": {
+      "name": "Вадим",
+      "role": "Барменеджер",
+      "bio": "Знает все о барной культуре. Вырос из помощника бармена до барменеджера. Организует крутую тусовку даже на Марсе.",
+      "experience_years": 14,
+      "specialization": "Менеджмент, организация",
+      "order": 4,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.teammember",
+    "pk": 5,
+    "fields": {
+      "name": "Виталий",
+      "role": "Миксолог",
+      "bio": "Его коктейли удивляют гурманов. Он в совершенстве владеет барной классикой. Флейринг у него в крови.",
+      "experience_years": 9,
+      "specialization": "Авторские коктейли",
+      "order": 5,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.teammember",
+    "pk": 6,
+    "fields": {
+      "name": "Дмитрий",
+      "role": "Флейр-бартендер",
+      "bio": "Он не может жить без флейринга. Его коктейли зажигают эмоции и дарят любовь.",
+      "experience_years": 8,
+      "specialization": "Флейринг",
+      "order": 6,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.teammember",
+    "pk": 7,
+    "fields": {
+      "name": "Евгений",
+      "role": "Чемпион России",
+      "bio": "Трехкратный чемпион России по флейрингу. Его коктейли покорили 23 страны.",
+      "experience_years": 13,
+      "specialization": "Флейринг, международные соревнования",
+      "order": 7,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.teammember",
+    "pk": 8,
+    "fields": {
+      "name": "Макс",
+      "role": "Коктейльный виртуоз",
+      "bio": "Смешает любой коктейль с закрытыми глазами. Не представляет свою жизнь без флейринга.",
+      "experience_years": 11,
+      "specialization": "Универсал",
+      "order": 8,
+      "is_active": true
+    }
+  }
+]

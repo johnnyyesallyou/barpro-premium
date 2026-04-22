@@ -1,0 +1,327 @@
+[
+{
+  "model": "catalog.cocktail",
+  "pk": 1,
+  "fields": {
+    "name": "Мохито Классик",
+    "composition": "Ром Bacardi, мята, лайм, сахар, содовая",
+    "strength": "15%",
+    "price": "650.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 1
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 2,
+  "fields": {
+    "name": "Негрони",
+    "composition": "Джин Beefeater, Campari, вермут Martini Rosso",
+    "strength": "24%",
+    "price": "750.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 2
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 3,
+  "fields": {
+    "name": "Виски Сауэр",
+    "composition": "Виски Jameson, лимон, сахарный сироп, яичный белок",
+    "strength": "18%",
+    "price": "700.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 3
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 4,
+  "fields": {
+    "name": "Апероль Шприц",
+    "composition": "Aperol, Prosecco, содовая, апельсин",
+    "strength": "11%",
+    "price": "600.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 4
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 5,
+  "fields": {
+    "name": "Маргарита",
+    "composition": "Текила Olmeca, Cointreau, лайм, соль",
+    "strength": "20%",
+    "price": "750.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 5
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 6,
+  "fields": {
+    "name": "Дайкири",
+    "composition": "Ром Bacardi, лайм, сахарный сироп",
+    "strength": "17%",
+    "price": "680.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 6
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 7,
+  "fields": {
+    "name": "Пина Колада",
+    "composition": "Ром Bacardi, кокосовый крем, ананасовый сок",
+    "strength": "12%",
+    "price": "700.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 7
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 8,
+  "fields": {
+    "name": "Космополитен",
+    "composition": "Водка Absolut, Cointreau, клюквенный сок, лайм",
+    "strength": "18%",
+    "price": "720.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 8
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 9,
+  "fields": {
+    "name": "Лонг Айленд",
+    "composition": "Водка, ром, текила, джин, Triple Sec, кола",
+    "strength": "22%",
+    "price": "800.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 9
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 10,
+  "fields": {
+    "name": "Куба Либре",
+    "composition": "Ром Bacardi, кока-кола, лайм",
+    "strength": "12%",
+    "price": "550.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 10
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 11,
+  "fields": {
+    "name": "Манхэттен",
+    "composition": "Виски Jameson, вермут Martini Rosso, Angostura",
+    "strength": "30%",
+    "price": "800.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 11
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 12,
+  "fields": {
+    "name": "Олд Фэшн",
+    "composition": "Бурбон Four Roses, сахар, Angostura, апельсин",
+    "strength": "32%",
+    "price": "850.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 12
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 13,
+  "fields": {
+    "name": "Джин-Тоник",
+    "composition": "Джин Beefeater, тоник Schweppes, лайм",
+    "strength": "10%",
+    "price": "550.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 13
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 14,
+  "fields": {
+    "name": "Московский Мул",
+    "composition": "Водка Absolut, имбирное пиво, лайм",
+    "strength": "12%",
+    "price": "650.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 14
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 15,
+  "fields": {
+    "name": "Bloody Mary",
+    "composition": "Водка Absolut, томатный сок, специи, Табаско",
+    "strength": "14%",
+    "price": "700.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 15
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 16,
+  "fields": {
+    "name": "Секс на Пляже",
+    "composition": "Водка, персиковый ликер, клюквенный сок, апельсиновый сок",
+    "strength": "14%",
+    "price": "680.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 16
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 17,
+  "fields": {
+    "name": "Май Тай",
+    "composition": "Ром Bacardi, ликер Curacao, оргеат, лайм",
+    "strength": "18%",
+    "price": "750.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 17
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 18,
+  "fields": {
+    "name": "Мартини",
+    "composition": "Джин Beefeater, вермут Martini Extra Dry, олива",
+    "strength": "28%",
+    "price": "800.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 18
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 19,
+  "fields": {
+    "name": "Espresso Martini",
+    "composition": "Водка Absolut, кофейный ликер Kahlua, эспрессо",
+    "strength": "20%",
+    "price": "750.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 19
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 20,
+  "fields": {
+    "name": "Negroni Sbagliato",
+    "composition": "Prosecco, Campari, вермут Martini Rosso",
+    "strength": "15%",
+    "price": "700.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 20
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 21,
+  "fields": {
+    "name": "Bellini",
+    "composition": "Prosecco, персиковое пюре",
+    "strength": "8%",
+    "price": "650.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 21
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 22,
+  "fields": {
+    "name": "Caipirinha",
+    "composition": "Кашаса, лайм, тростниковый сахар",
+    "strength": "20%",
+    "price": "700.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 22
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 23,
+  "fields": {
+    "name": "Paloma",
+    "composition": "Текила Olmeca, грейпфрутовая содовая, лайм",
+    "strength": "12%",
+    "price": "650.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 23
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 24,
+  "fields": {
+    "name": "Tommy's Margarita",
+    "composition": "Текила Olmeca, лайм, агава",
+    "strength": "22%",
+    "price": "780.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 24
+  }
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 25,
+  "fields": {
+    "name": "Americano",
+    "composition": "Campari, вермут Martini Rosso, содовая",
+    "strength": "16%",
+    "price": "650.00",
+    "type": "alco",
+    "is_active": true,
+    "order": 25
+  }
+}
+]

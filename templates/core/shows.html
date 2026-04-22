@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Шоу-программы — BarPro Premium{% endblock %}
+
+{% block content %}
+<section class="hero" style="min-height: 50vh;">
+    <div class="hero__content">
+        <h1 class="hero__title">Шоу-программы</h1>
+        <p class="hero__subtitle">14 интерактивных программ от флейринга до огненного шоу</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Флейринг и барменское шоу</h2>
+    <div class="cards-grid">
+        {% for show in shows %}
+            {% if forloop.counter <= 2 %}
+        <div class="card">
+            <div class="card-icon" style="font-size: 4rem;">{{ show.icon }}</div>
+            <h3 class="card-title">{{ show.name }}</h3>
+            <p style="min-height: 100px;">{{ show.description }}</p>
+            <div class="card-price" style="margin-top: auto;">{{ show.price }}₽</div>
+            <a href="{% url 'calculator:calculator' %}" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Заказать</a>
+        </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section section-dark">
+    <h2 class="section-title">Интерактивные развлечения</h2>
+    <div class="cards-grid">
+        {% for show in shows %}
+            {% if forloop.counter > 2 and forloop.counter <= 10 %}
+        <div class="card">
+            <div class="card-icon" style="font-size: 4rem;">{{ show.icon }}</div>
+            <h3 class="card-title">{{ show.name }}</h3>
+            <p style="min-height: 100px;">{{ show.description }}</p>
+            <div class="card-price" style="margin-top: auto;">{{ show.price }}₽</div>
+            <a href="{% url 'calculator:calculator' %}" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Заказать</a>
+        </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Дополнительный формат</h2>
+    <div class="cards-grid">
+        {% for show in shows %}
+            {% if forloop.counter > 10 %}
+        <div class="card">
+            <div class="card-icon" style="font-size: 4rem;">{{ show.icon }}</div>
+            <h3 class="card-title">{{ show.name }}</h3>
+            <p style="min-height: 100px;">{{ show.description }}</p>
+            <div class="card-price" style="margin-top: auto;">{{ show.price }}₽</div>
+            <a href="{% url 'calculator:calculator' %}" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Заказать</a>
+        </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section section-dark">
+    <h2 class="section-title">Почему выбирают наши шоу?</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-icon">⭐</div>
+            <h3 class="card-title">Профессионалы</h3>
+            <p>Чемпионы России и международных конкурсов по флейрингу. 10+ лет опыта выступлений</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎭</div>
+            <h3 class="card-title">Готовые сценарии</h3>
+            <p>Отработанные программы с четким тайминг ом. Адаптируем под формат вашего мероприятия</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🔥</div>
+            <h3 class="card-title">Wow-эффект</h3>
+            <p>Трюки, огонь, жонглирование, синхронные движения. Гости будут в восторге</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎬</div>
+            <h3 class="card-title">Готовность к съемке</h3>
+            <p>Красивая картинка гарантирована. Отличный контент для фото/видео вашего мероприятия</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title">Вовлечение гостей</h3>
+            <p>Интерактивные элементы, мастер-классы, конкурсы. Гости — не зрители, а участники</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3 class="card-title">Безопасность</h3>
+            <p>Все трюки отработаны тысячи раз. Соблюдаем технику безопасности, застрахованы</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Популярные комбинации</h2>
+    <p style="text-align: center; color: var(--gray-text); margin-bottom: 3rem;">Создайте насыщенную программу для гостей</p>
+    <div class="pricing-grid">
+        <div class="pricing-card">
+            <div class="pricing-badge">Для корпоратива</div>
+            <h3>Флейринг + Коктейльное казино</h3>
+            <p style="margin: 2rem 0;">Эффектное открытие мероприятия + интерактив для всех гостей</p>
+            <div class="card-price">55,000₽</div>
+        </div>
+        <div class="pricing-card featured">
+            <div class="pricing-badge">Для свадьбы</div>
+            <h3>Пирамида + Винное казино</h3>
+            <p style="margin: 2rem 0;">Торжественное начало банкета + развлечение для гостей</p>
+            <div class="card-price">33,000₽</div>
+        </div>
+        <div class="pricing-card">
+            <div class="pricing-badge">Для вечеринки</div>
+            <h3>Fire Show + DJ-сет</h3>
+            <p style="margin: 2rem 0;">Огненное шоу как кульминация + музыкальное сопровождение</p>
+            <div class="card-price">70,000₽</div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-dark">
+    <h2 class="section-title">Часто задаваемые вопросы</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+            <div class="faq-question">Сколько длится шоу-программа?</div>
+            <div class="faq-answer">Флейринг шоу — 30-40 минут. Интерактивы (казино, мастер-классы) — 1-2 часа. Мы подстроимся под ваш тайминг.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Нужна ли специальная площадка?</div>
+            <div class="faq-answer">Для большинства программ достаточно 2x3 метра ровной поверхности. Fire show требует outdoor или помещение с высокими потолками (от 4м).</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Можно ли скомбинировать несколько программ?</div>
+            <div class="faq-answer">Да! Мы рекомендуем комбинации для создания насыщенной программы. Скидки при заказе 2+ шоу.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Входят ли коктейли в стоимость шоу?</div>
+            <div class="faq-answer">Флейринг шоу — это демонстрация мастерства, коктейли оплачиваются отдельно. В мастер-классах коктейли для участников включены в стоимость.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Как забронировать шоу?</div>
+            <div class="faq-answer">Позвоните или оставьте заявку через калькулятор. Бронируйте за 7-14 дней, так как лучшие артисты расписаны на месяц вперед.</div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="text-align: center; padding: 5rem 2rem;">
+    <h2 style="font-size: 3rem; margin-bottom: 1rem;">Сделайте праздник незабываемым</h2>
+    <p style="font-size: 1.2rem; color: var(--gray-text); margin-bottom: 2rem;">Закажите шоу-программу для вашего мероприятия</p>
+    <a href="{% url 'calculator:calculator' %}" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Рассчитать стоимость</a>
+</section>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active');
+    });
+});
+</script>
+{% endblock %}

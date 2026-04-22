@@ -1,0 +1,127 @@
+[
+{
+  "model": "catalog.cocktail",
+  "pk": 26,
+  "fields": {"name": "Aperol Sour", "composition": "Aperol, лимон, сахарный сироп, яичный белок", "strength": "12%", "price": "680.00", "type": "alco", "is_active": true, "order": 26}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 27,
+  "fields": {"name": "French 75", "composition": "Джин Beefeater, шампанское, лимон, сахар", "strength": "18%", "price": "850.00", "type": "alco", "is_active": true, "order": 27}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 28,
+  "fields": {"name": "Penicillin", "composition": "Виски Jameson, имбирный сироп, лимон, мед", "strength": "24%", "price": "780.00", "type": "alco", "is_active": true, "order": 28}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 29,
+  "fields": {"name": "Boulevardier", "composition": "Бурбон, Campari, вермут Martini Rosso", "strength": "28%", "price": "800.00", "type": "alco", "is_active": true, "order": 29}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 30,
+  "fields": {"name": "Clover Club", "composition": "Джин Beefeater, малина, лимон, яичный белок", "strength": "15%", "price": "720.00", "type": "alco", "is_active": true, "order": 30}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 31,
+  "fields": {"name": "Клубничный Лимонад", "composition": "Клубника, лимон, мята, сахар, содовая", "strength": "0%", "price": "450.00", "type": "non_alco", "is_active": true, "order": 31}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 32,
+  "fields": {"name": "Мохито Безалкогольный", "composition": "Мята, лайм, сахар, содовая", "strength": "0%", "price": "400.00", "type": "non_alco", "is_active": true, "order": 32}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 33,
+  "fields": {"name": "Голубая Лагуна", "composition": "Сироп Blue Curacao, лимонад, лимон", "strength": "0%", "price": "420.00", "type": "non_alco", "is_active": true, "order": 33}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 34,
+  "fields": {"name": "Пина Колада Безалкогольная", "composition": "Кокосовый крем, ананасовый сок, лед", "strength": "0%", "price": "450.00", "type": "non_alco", "is_active": true, "order": 34}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 35,
+  "fields": {"name": "Манго Смузи", "composition": "Манго, банан, апельсиновый сок, мед", "strength": "0%", "price": "480.00", "type": "non_alco", "is_active": true, "order": 35}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 36,
+  "fields": {"name": "Ягодный Детокс", "composition": "Малина, черника, клубника, лимон, мята", "strength": "0%", "price": "500.00", "type": "non_alco", "is_active": true, "order": 36}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 37,
+  "fields": {"name": "Зеленый Детокс", "composition": "Шпинат, огурец, яблоко, лимон, имбирь", "strength": "0%", "price": "520.00", "type": "non_alco", "is_active": true, "order": 37}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 38,
+  "fields": {"name": "Тропический Фреш", "composition": "Манго, маракуйя, апельсин, лайм", "strength": "0%", "price": "480.00", "type": "non_alco", "is_active": true, "order": 38}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 39,
+  "fields": {"name": "Имбирный Лимонад", "composition": "Имбирь, лимон, мед, мята, содовая", "strength": "0%", "price": "420.00", "type": "non_alco", "is_active": true, "order": 39}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 40,
+  "fields": {"name": "Арбузный Фреш", "composition": "Арбуз, лайм, мята", "strength": "0%", "price": "450.00", "type": "non_alco", "is_active": true, "order": 40}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 41,
+  "fields": {"name": "Грейпфрутовый Спритц", "composition": "Грейпфрут, розмарин, тоник, лед", "strength": "0%", "price": "440.00", "type": "non_alco", "is_active": true, "order": 41}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 42,
+  "fields": {"name": "Маракуйя Лимонад", "composition": "Маракуйя, лимон, сахар, содовая", "strength": "0%", "price": "470.00", "type": "non_alco", "is_active": true, "order": 42}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 43,
+  "fields": {"name": "Кокосовый Смузи", "composition": "Кокосовое молоко, банан, манго, лед", "strength": "0%", "price": "490.00", "type": "non_alco", "is_active": true, "order": 43}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 44,
+  "fields": {"name": "Огуречный Детокс", "composition": "Огурец, лайм, мята, содовая", "strength": "0%", "price": "400.00", "type": "non_alco", "is_active": true, "order": 44}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 45,
+  "fields": {"name": "Вишневый Лимонад", "composition": "Вишня, лимон, базилик, содовая", "strength": "0%", "price": "460.00", "type": "non_alco", "is_active": true, "order": 45}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 46,
+  "fields": {"name": "Персиковый Айс Ти", "composition": "Персик, черный чай, лимон, мята", "strength": "0%", "price": "430.00", "type": "non_alco", "is_active": true, "order": 46}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 47,
+  "fields": {"name": "Апельсиновый Фреш", "composition": "Свежевыжатый апельсиновый сок", "strength": "0%", "price": "400.00", "type": "non_alco", "is_active": true, "order": 47}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 48,
+  "fields": {"name": "Яблочный Фреш", "composition": "Свежевыжатый яблочный сок, корица", "strength": "0%", "price": "400.00", "type": "non_alco", "is_active": true, "order": 48}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 49,
+  "fields": {"name": "Морковный Фреш", "composition": "Морковь, апельсин, имбирь", "strength": "0%", "price": "420.00", "type": "non_alco", "is_active": true, "order": 49}
+},
+{
+  "model": "catalog.cocktail",
+  "pk": 50,
+  "fields": {"name": "Смузи Боул", "composition": "Асаи, банан, ягоды, гранола, кокос", "strength": "0%", "price": "550.00", "type": "non_alco", "is_active": true, "order": 50}
+}
+]

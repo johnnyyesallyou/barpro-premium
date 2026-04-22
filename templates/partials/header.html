@@ -1,0 +1,30 @@
+{% load static %}
+<header class="header">
+    <nav class="navbar">
+        <a href="{% url 'core:home' %}" class="logo">BarPro</a>
+        
+        <ul class="nav-menu" id="mainNav">
+            <li><a href="{% url 'catalog:menu' %}" class="nav-link">Меню (50+)</a></li>
+            <li><a href="{% url 'catalog:packages' %}" class="nav-link">Пакеты</a></li>
+            <li><a href="{% url 'core:bars' %}" class="nav-link">Тематические бары</a></li>
+            <li><a href="{% url 'core:shows' %}" class="nav-link">Шоу-программы</a></li>
+            <li><a href="{% url 'core:team' %}" class="nav-link">Команда</a></li>
+            <li><a href="{% url 'core:loyalty' %}" class="nav-link">Лояльность</a></li>
+            <li><a href="{% url 'gallery:cases' %}" class="nav-link">Кейсы</a></li>
+            <li><a href="{% url 'calculator:calculator' %}" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Калькулятор</a></li>
+        </ul>
+
+        <button class="header__burger" id="burgerBtn" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+</header>
+
+<script>
+document.getElementById('burgerBtn').addEventListener('click', function() {
+    document.getElementById('mainNav').classList.toggle('active');
+    this.classList.toggle('active');
+});
+</script>

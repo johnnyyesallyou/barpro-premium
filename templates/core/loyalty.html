@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Программа лояльности — BarPro Premium{% endblock %}
+
+{% block content %}
+<section class="hero" style="min-height: 50vh;">
+    <div class="hero__content">
+        <h1 class="hero__title">Программа лояльности</h1>
+        <p class="hero__subtitle">Подарки при каждом заказе — экономьте до 30%</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Как это работает?</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--gray-text); font-size: 1.1rem;">
+        Заказывайте коктейли — получайте бонусы! Чем больше заказов, тем больше подарков. 
+        Накопительная система действует бессрочно.
+    </p>
+    
+    <div class="pricing-grid">
+        {% for level in loyalty_levels %}
+        <div class="pricing-card{% if forloop.counter == 3 %} featured{% endif %}">
+            <div class="card-icon" style="font-size: 5rem; margin-bottom: 1rem;">{{ level.icon }}</div>
+            <h3 style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ level.cocktails_count }}</h3>
+            <p style="color: var(--gray-text); margin-bottom: 2rem;">коктейлей</p>
+            
+            <div style="height: 2px; background: var(--gold-primary); margin: 2rem 0;"></div>
+            
+            <h4 style="font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 1rem;">{{ level.gift_name }}</h4>
+            <p style="margin-bottom: 2rem; min-height: 80px;">{{ level.gift_description }}</p>
+            
+            {% if level.gift_value > 0 %}
+            <div class="pricing-badge" style="margin-top: auto;">Подарок на {{ level.gift_value }}₽</div>
+            {% else %}
+            <div class="pricing-badge" style="margin-top: auto; background: linear-gradient(135deg, var(--gold-dark), var(--gold-primary));">Премиум бонус</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section section-dark">
+    <h2 class="section-title">Преимущества программы</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-icon">🎁</div>
+            <h3 class="card-title">Реальные подарки</h3>
+            <p>Не баллы и скидки, а настоящие премиум услуги: шоу, пирамиды, дополнительные коктейли</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">📈</div>
+            <h3 class="card-title">Накопительная система</h3>
+            <p>Бонусы суммируются со всех заказов. Заказали 50 + 50 коктейлей = получили подарок за 100</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">⏰</div>
+            <h3 class="card-title">Бессрочно</h3>
+            <p>Баллы не сгорают. Заказывайте когда удобно — мы помним каждый ваш заказ</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">💎</div>
+            <h3 class="card-title">VIP статус</h3>
+            <p>От 300 коктейлей — постоянная скидка 10%, приоритетное бронирование дат</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title">Персональный менеджер</h3>
+            <p>От 500 коктейлей — личный менеджер, индивидуальные условия, эксклюзивные предложения</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🏆</div>
+            <h3 class="card-title">Премиум бонусы</h3>
+            <p>1000+ коктейлей — доступ к закрытым мероприятиям, новым услугам и спецпредложениям</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Часто задаваемые вопросы</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+            <div class="faq-question">Как присоединиться к программе?</div>
+            <div class="faq-answer">Программа активируется автоматически с первого заказа. Ничего оформлять не нужно — мы сами отслеживаем ваши заказы по номеру телефона.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Когда я получу подарок?</div>
+            <div class="faq-answer">Сразу при достижении уровня! Подарок можно использовать в текущем заказе (если достигли порога) или в следующем.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Могу ли я передать бонусы другому человеку?</div>
+            <div class="faq-answer">Да, вы можете подарить свой уровень лояльности друзьям или коллегам. Достаточно сообщить нам при заказе.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Суммируются ли подарки?</div>
+            <div class="faq-answer">Каждый уровень дает свой подарок однократно. Но скидка 10% с 300 коктейлей действует постоянно на все последующие заказы.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Как проверить свой текущий уровень?</div>
+            <div class="faq-answer">Позвоните нам или напишите в WhatsApp — мы сразу скажем сколько коктейлей накоплено и до какого подарка осталось.</div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-dark" style="text-align: center; padding: 5rem 2rem;">
+    <h2 style="font-size: 3rem; margin-bottom: 1rem;">Начните копить бонусы прямо сейчас</h2>
+    <p style="font-size: 1.2rem; color: var(--gray-text); margin-bottom: 2rem;">Первый подарок уже при заказе 100 коктейлей</p>
+    <a href="{% url 'calculator:calculator' %}" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Сделать первый заказ</a>
+</section>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active');
+    });
+});
+</script>
+{% endblock %}

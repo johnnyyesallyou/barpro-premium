@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ case.title }} — BarPro{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="/cases/">Кейсы</a>
+            <span>/</span>
+            <span>{{ case.title }}</span>
+        </nav>
+
+        <article class="case-detail">
+            <h1 class="case-detail__title">{{ case.title }}</h1>
+
+            <div class="case-detail__meta">
+                <span>📅 {{ case.date|date:"d E Y" }}</span>
+                <span>👥 {{ case.guests_count }} гостей</span>
+                {% if case.location %}
+                <span>📍 {{ case.location }}</span>
+                {% endif %}
+            </div>
+
+            {% if case.caseimage_set.all %}
+            <div class="case-detail__gallery">
+                {% for case_img in case.caseimage_set.all %}
+                <div class="case-detail__gallery-item">
+                    <img src="{{ case_img.image.url }}" alt="{{ case.title }}">
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="case-detail__content">
+                {{ case.description|safe }}
+            </div>
+
+            <div class="case-detail__cta">
+                <h3>Хотите такое же мероприятие?</h3>
+                <p>Рассчитайте стоимость вашего мероприятия с помощью нашего калькулятора</p>
+                <a href="/calculator/" class="btn btn--primary btn--lg">Рассчитать стоимость</a>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}
