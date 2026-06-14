@@ -1,0 +1,20 @@
+{
+  "name": "barpro-premium",
+  "version": "1.1.0",
+  "description": "BarPro Premium — Studio-grade WordPress Theme",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ]
+}

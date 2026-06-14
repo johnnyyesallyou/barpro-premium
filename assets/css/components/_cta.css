@@ -1,0 +1,62 @@
+/* ============================================================
+   CTA BLOCK — studio rounded block
+   ============================================================ */
+
+.studio-cta {
+  padding: 0 8vw 120px;
+}
+.studio-cta__inner {
+  border-radius: var(--r-xl);
+  padding: 100px 80px;
+  background:
+    linear-gradient(135deg, rgba(212,175,55,.14), rgba(255,255,255,.02));
+  border: 1px solid var(--border-gold);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.studio-cta__inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(212,175,55,.12), transparent 65%);
+  pointer-events: none;
+}
+.studio-cta__proof {
+  font-size: .75rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.studio-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 5.5rem);
+  line-height: 1;
+  margin-bottom: 20px;
+  position: relative;
+}
+.studio-cta__sub {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 44px;
+  position: relative;
+}
+.studio-cta__buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.studio-cta__guarantee {
+  margin-top: 24px;
+  font-size: .78rem;
+  color: var(--muted-2);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .studio-cta { padding: 0 24px 80px; }
+  .studio-cta__inner { padding: 60px 28px; }
+}

@@ -1,0 +1,40 @@
+/* ============================================================
+   TEAM CARDS — editorial
+   ============================================================ */
+
+.team-grid-studio {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+.team-card-studio {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform .4s var(--ease-out), box-shadow .4s, border-color .4s;
+}
+.team-card-studio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  border-color: var(--border-gold);
+}
+.team-card-studio__photo {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+.team-card-studio__photo img { width: 100%; height: 100%; object-fit: cover; }
+.team-card-studio__body { padding: 24px; }
+.team-card-studio__name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+.team-card-studio__role { color: var(--accent); font-size: .82rem; letter-spacing: .08em; }
+.team-card-studio__exp { color: var(--muted); font-size: .85rem; margin-top: 8px; }

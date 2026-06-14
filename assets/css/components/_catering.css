@@ -1,0 +1,95 @@
+/* ============================================================
+   CATERING SPLIT — studio split layout
+   ============================================================ */
+
+.catering-split {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .catering-split { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.catering-split__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.catering-split__lead {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.catering-split__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+.catering-split__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.6;
+}
+.catering-split__list li::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1px solid var(--border-gold);
+  flex-shrink: 0;
+  margin-top: 1px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3 3 5-6' stroke='%23d4af37' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+.catering-split__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Benefits grid */
+.benefits-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.benefit-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: border-color .3s, transform .3s var(--ease-out);
+}
+.benefit-card:hover {
+  border-color: var(--border-gold);
+  transform: translateX(6px);
+}
+.benefit-card__icon {
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--r-sm);
+  background: var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.benefit-card__title { font-weight: 600; margin-bottom: 4px; }
+.benefit-card__text  { color: var(--muted); font-size: .88rem; }

@@ -1,0 +1,201 @@
+/**
+ * BarPro Premium - Design System
+ * Awwwards-level CSS Variables
+ */
+
+:root {
+    /* ============================================
+       COLORS - PREMIUM PALETTE
+       ============================================ */
+    
+    /* Black Shades */
+    --black-pure: #000000;
+    --black-rich: #0a0a0a;
+    --black-soft: #1a1a1a;
+    --black-light: #2a2a2a;
+    
+    /* Gold Shades */
+    --gold-light: #f4d03f;
+    --gold-primary: #d4af37;
+    --gold-dark: #b8922f;
+    --gold-dim: #9a7828;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --gold-glow-strong: rgba(212, 175, 55, 0.5);
+    
+    /* White Shades */
+    --white-pure: #ffffff;
+    --white-soft: #f8f8f8;
+    --white-dim: #e0e0e0;
+    --white-muted: #b0b0b0;
+    
+    /* Gray Scale */
+    --gray-100: #1a1a1a;
+    --gray-200: #2a2a2a;
+    --gray-300: #3a3a3a;
+    --gray-400: #4a4a4a;
+    --gray-500: #808080;
+    --gray-600: #b0b0b0;
+    --gray-700: #d0d0d0;
+    --gray-800: #e8e8e8;
+    
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    
+    /* Font Families */
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Jost', sans-serif;
+    --font-mono: 'Courier New', monospace;
+    
+    /* Font Sizes - Fluid Typography */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+    --text-xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+    --text-2xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+    --text-3xl: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+    --text-4xl: clamp(3rem, 2.5rem + 2.5vw, 5rem);
+    --text-5xl: clamp(4rem, 3rem + 5vw, 6rem);
+    --text-hero: clamp(4rem, 3rem + 5vw, 8rem);
+    --text-mega: clamp(6rem, 4rem + 10vw, 12rem);
+    
+    /* Font Weights */
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    
+    /* Line Heights */
+    --leading-tight: 0.95;
+    --leading-snug: 1.1;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.75;
+    --leading-loose: 2;
+    
+    /* Letter Spacing */
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.02em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    
+    /* ============================================
+       SPACING - FLUID SCALE
+       ============================================ */
+    
+    --space-3xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+    --space-2xs: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+    --space-xs: clamp(0.75rem, 0.7rem + 0.25vw, 1rem);
+    --space-sm: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+    --space-md: clamp(1.5rem, 1.25rem + 1.25vw, 2.5rem);
+    --space-lg: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+    --space-xl: clamp(3rem, 2rem + 5vw, 6rem);
+    --space-2xl: clamp(4rem, 3rem + 5vw, 8rem);
+    --space-3xl: clamp(6rem, 4rem + 10vw, 12rem);
+    
+    /* ============================================
+       EFFECTS
+       ============================================ */
+    
+    /* Blur */
+    --blur-xs: 4px;
+    --blur-sm: 8px;
+    --blur-md: 16px;
+    --blur-lg: 24px;
+    --blur-xl: 40px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.4);
+    --shadow-gold: 0 8px 32px var(--gold-glow);
+    --shadow-gold-strong: 0 16px 48px var(--gold-glow-strong);
+    
+    /* Transitions */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slower: 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Easing */
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* ============================================
+       BORDER RADIUS
+       ============================================ */
+    
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-2xl: 48px;
+    --radius-full: 9999px;
+    
+    /* ============================================
+       Z-INDEX SCALE
+       ============================================ */
+    
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-popover: 600;
+    --z-tooltip: 700;
+    --z-notification: 800;
+    --z-max: 9999;
+    
+    /* ============================================
+       LAYOUT
+       ============================================ */
+    
+    /* Container */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1536px;
+    
+    /* Gaps */
+    --gap-sm: 1rem;
+    --gap-md: 1.5rem;
+    --gap-lg: 2rem;
+    --gap-xl: 3rem;
+}
+
+/* ============================================
+   DARK MODE SUPPORT (future)
+   ============================================ */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Override for light mode if needed */
+    }
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-fast: 0.01s;
+        --transition-base: 0.01s;
+        --transition-slow: 0.01s;
+        --transition-slower: 0.01s;
+    }
+    
+    * {
+        animation-duration: 0.01s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01s !important;
+    }
+}

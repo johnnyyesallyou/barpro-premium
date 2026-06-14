@@ -1,0 +1,467 @@
+/* ============================================================
+   MOTION DESIGN SYSTEM
+   ============================================================ */
+/* ════════════════════════════════════════════════════════════
+   MOTION DESIGN SYSTEM
+   page transitions · progress bar · cursor states ·
+   scroll-to-top · ripple · micro-interactions
+   ════════════════════════════════════════════════════════════ */
+
+/* ── Page transition overlay ─────────────────────────────── */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  pointer-events: none;
+}
+.page-transition-overlay__bar {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: barShimmer 1s ease-in-out infinite;
+}
+@keyframes barShimmer {
+  0%,100% { opacity: 0.4; transform: scaleX(0.5); }
+  50%      { opacity: 1;   transform: scaleX(1);   }
+}
+
+/* ── Scroll progress bar ─────────────────────────────────── */
+.studio-progress-bar {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: none; /* управляется JS/GSAP */
+  will-change: transform;
+}
+
+/* ── Cursor — расширенные состояния ─────────────────────── */
+.studio-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: width .2s var(--ease-out),
+              height .2s var(--ease-out),
+              background .2s;
+}
+.studio-cursor-follower {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(212,175,55,.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99997;
+  top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: width .35s var(--ease-out),
+              height .35s var(--ease-out),
+              border-color .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover state */
+.studio-cursor.hovering {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+}
+.studio-cursor-follower.hovering {
+  width: 56px;
+  height: 56px;
+  border-color: var(--accent);
+}
+
+/* Click state */
+.studio-cursor.clicking {
+  transform: translate(-50%, -50%) scale(0.6);
+}
+.studio-cursor-follower.clicking {
+  width: 28px;
+  height: 28px;
+}
+
+/* Data-label: текст внутри follower */
+.studio-cursor-follower[data-label]::after {
+  content: attr(data-label);
+  position: absolute;
+  font-size: .58rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+@media (pointer: coarse) {
+  .studio-cursor,
+  .studio-cursor-follower { display: none !important; }
+  body { cursor: auto !important; }
+  a, button { cursor: pointer !important; }
+}
+
+/* ── Ripple ──────────────────────────────────────────────── */
+@keyframes rippleAnim {
+  to { transform: scale(1); opacity: 0; }
+}
+
+/* ── Reveal: начальное состояние задаётся JS, но ─────────── */
+/* если JS ещё не загрузился — элементы видимы */
+.no-js .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ── Scroll-to-top ───────────────────────────────────────── */
+.scroll-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--panel);
+  border: 1px solid var(--border-gold);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity .4s var(--ease-out),
+              transform .4s var(--ease-out),
+              background .3s,
+              border-color .3s;
+}
+.scroll-to-top.visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+.scroll-to-top:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+  transform: translateY(-3px);
+}
+
+/* ── WhatsApp float ─────────────────────────────────────── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 32px;
+  right: 28px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 901;
+  box-shadow: 0 4px 24px rgba(37,211,102,.35);
+  transition: transform .35s var(--ease-out), box-shadow .35s;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  transform: scale(1.12) translateY(-3px);
+  box-shadow: 0 8px 32px rgba(37,211,102,.5);
+}
+
+/* ── Motion tokens для CSS анимаций ─────────────────────── */
+:root {
+  --ease-out:     cubic-bezier(.16,1,.3,1);
+  --ease-in-out:  cubic-bezier(.76,0,.24,1);
+  --ease-back:    cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:     180ms;
+  --dur-base:     340ms;
+  --dur-slow:     600ms;
+  --dur-xslow:    900ms;
+}
+
+/* ── CSS-only hover transitions для карточек ────────────── */
+.studio-pricing-card,
+.bento,
+.team-card-studio,
+.studio-testimonial,
+.cocktail-card-studio,
+.showcase-card,
+.benefit-card {
+  transition:
+    border-color var(--dur-base) var(--ease-out),
+    box-shadow   var(--dur-base) var(--ease-out),
+    transform    var(--dur-base) var(--ease-out);
+  will-change: transform;
+}
+
+/* GSAP управляет transform; CSS как fallback на touch */
+@media (pointer: coarse) {
+  .studio-pricing-card:active,
+  .bento:active,
+  .cocktail-card-studio:active {
+    transform: scale(.98);
+  }
+}
+
+/* ── Kinetic hero title — overflow clip для SplitType ────── */
+.studio-hero__title span {
+  display: block;
+  overflow: hidden;          /* clip для word/char reveals */
+}
+.studio-hero__title .char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* ── Section titles overflow clip ─────────────────────────── */
+.studio-section__title .word,
+.studio-cta__title .word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+/* ── Nav underline (JS добавляет span) ───────────────────── */
+.studio-nav__menu a {
+  position: relative;        /* нужно для абсолютного span */
+}
+
+/* ── Parallax layers will-change ─────────────────────────── */
+.studio-hero__bg video,
+.studio-hero__glow,
+.studio-hero__content,
+.showcase-card {
+  will-change: transform;
+}
+
+/* ── Reduced motion: полный сброс ────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-overlay,
+  .studio-cursor,
+  .studio-cursor-follower,
+  .studio-progress-bar { display: none !important; }
+
+  .reveal { opacity: 1 !important; transform: none !important; }
+
+  .studio-hero__eyebrow,
+  .studio-hero__title span,
+  .studio-hero__sub,
+  .studio-hero__actions,
+  .studio-hero__stats,
+  .studio-hero__scroll { animation: none !important; opacity: 1 !important; }
+
+  * { transition-duration: .01ms !important;
+      animation-duration:  .01ms !important; }
+}
+
+/* ── Button spinner ─────────────────────────────────────── */
+.btn-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spinnerSpin .7s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+@keyframes spinnerSpin { to { transform: rotate(360deg); } }
+
+/* ── Calculator steps — opacity управляется GSAP ─────────── */
+.calc-step {
+  will-change: transform, opacity;
+}
+.calc-step:not(.active) {
+  display: none;
+}
+/* Когда GSAP активирует шаг он ставит display через classList */
+.calc-step.active {
+  display: block;
+}
+
+/* ── Calc step indicator transitions ─────────────────────── */
+.calc-step-indicator {
+  transition:
+    background var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out);
+}
+.calc-step-indicator.completed {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+}
+
+/* ── Reveal — начальное состояние (JS переопределяет) ────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity .8s var(--ease-out),
+    transform .8s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays через CSS (GSAP stagger переопределяет) */
+.reveal--delay-1 { transition-delay: .08s; }
+.reveal--delay-2 { transition-delay: .16s; }
+.reveal--delay-3 { transition-delay: .24s; }
+.reveal--delay-4 { transition-delay: .32s; }
+
+/* ── Data-tilt: задать начальный стиль ──────────────────── */
+[data-tilt] {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: border-color var(--dur-base) var(--ease-out),
+              box-shadow   var(--dur-base) var(--ease-out);
+  /* transform управляется JS */
+}
+
+/* ── Kinetic typography overflow clip ──────────────────── */
+[data-split-lines] .line {
+  overflow: hidden;
+  padding-bottom: .1em;
+}
+
+/* ── Archive page — reveal на карточках ─────────────────── */
+.cocktail-card-studio.reveal,
+.case-card.reveal,
+.studio-pricing-card.reveal {
+  /* наследуется из .reveal */
+}
+
+/* ── Inner hero (архивные страницы) ─────────────────────── */
+.inner-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 8vw 80px;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg,
+      rgba(10,10,10,.95) 0%,
+      rgba(20,20,20,.85) 50%,
+      rgba(10,10,10,.95) 100%);
+}
+.inner-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(212,175,55,.1), transparent 65%);
+  pointer-events: none;
+}
+.inner-hero .hero__content { position: relative; z-index: 1; }
+
+/* min-height теперь задаётся inline только значением (60vh / 50vh) */
+
+/* ──────────────────────────────────────────────────────────
+   PREMIUM UX ADDITIONS
+   ────────────────────────────────────────────────────────── */
+
+/* Eyebrow animated line */
+.studio-section__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow-line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+  transform-origin: left;
+  /* scaleX управляется GSAP */
+}
+
+/* Showcase pinned horizontal scroll */
+.showcase-section {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  padding: 0 8vw 120px;
+  width: max-content;  /* позволяет GSAP двигать */
+}
+/* На мобильных — обычный flex wrap */
+@media (max-width: 900px) {
+  .showcase-section {
+    width: auto;
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+}
+
+/* Text scramble — preserve monospace ширины */
+.showcase-card__title,
+.bento__title {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Gold glow pulse на CTA кнопке */
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 0 0   var(--accent-glow); }
+  50%       { box-shadow: 0 0 32px 8px var(--accent-glow); }
+}
+.btn-magnetic {
+  animation: goldPulse 3.5s ease-in-out infinite;
+}
+.btn-magnetic:hover {
+  animation: none;
+  box-shadow: var(--shadow-gold-lg);
+}
+
+/* Smooth image parallax — prevent overflow */
+.cocktail-card-studio__img,
+.team-card-studio__photo {
+  overflow: hidden;
+}
+.cocktail-card-studio__img img,
+.team-card-studio__photo img {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Page transition — label spinner */
+.page-transition-overlay {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.page-transition-overlay::after {
+  content: 'BARPRO';
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--accent);
+  letter-spacing: var(--tracking-widest);
+  opacity: 0;
+  animation: fadeIn .4s .2s forwards;
+}

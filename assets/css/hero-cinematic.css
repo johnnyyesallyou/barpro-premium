@@ -1,0 +1,340 @@
+/**
+ * BarPro Premium - Cinematic Components
+ * Awwwards-level UI
+ */
+
+/* ============================================
+   HERO CINEMATIC
+   ============================================ */
+
+.hero-cinematic {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+    background: var(--black-rich);
+}
+
+/* Video Background */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-video__source {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%) scale(1.1);
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1.1) saturate(0.9);
+}
+
+.hero-video__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(10, 10, 10, 0.3) 0%,
+        rgba(10, 10, 10, 0.7) 50%,
+        rgba(10, 10, 10, 0.95) 100%
+    );
+}
+
+.hero-video__grain {
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    animation: grainMove 8s steps(10) infinite;
+}
+
+@keyframes grainMove {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -10%); }
+    20% { transform: translate(-15%, 5%); }
+    30% { transform: translate(7%, -25%); }
+    40% { transform: translate(-5%, 25%); }
+    50% { transform: translate(-15%, 10%); }
+    60% { transform: translate(15%, 0%); }
+    70% { transform: translate(0%, 15%); }
+    80% { transform: translate(3%, 35%); }
+    90% { transform: translate(-10%, 10%); }
+}
+
+/* Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: var(--space-lg);
+    text-align: center;
+}
+
+/* Kinetic Typography */
+.hero-title-kinetic {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 12vw, 14rem);
+    font-weight: var(--weight-bold);
+    line-height: 0.85;
+    letter-spacing: var(--tracking-tighter);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.hero-title-kinetic__line {
+    display: block;
+    overflow: hidden;
+    color: var(--white-pure);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title-kinetic__line--gold {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 4px 20px rgba(212, 175, 55, 0.5));
+}
+
+/* Subtitle */
+.hero-subtitle-cinematic {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-regular);
+    letter-spacing: var(--tracking-wide);
+    color: var(--white-dim);
+    margin: 0 0 var(--space-lg) 0;
+    opacity: 0.9;
+}
+
+/* Stats */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.hero-stat__number {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-bold);
+    color: var(--gold-primary);
+    line-height: 1;
+}
+
+.hero-stat__label {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--white-muted);
+}
+
+/* CTA */
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xl);
+    flex-wrap: wrap;
+}
+
+/* Magnetic Button */
+.btn-magnetic {
+    position: relative;
+    display: inline-block;
+    padding: 1.5rem 3.5rem;
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    color: var(--black-rich);
+    background: var(--gold-primary);
+    border: none;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.btn-magnetic__text {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-magnetic__glow {
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.btn-magnetic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.5);
+}
+
+.btn-magnetic:hover .btn-magnetic__glow {
+    opacity: 1;
+}
+
+/* Ghost Button */
+.btn-ghost {
+    position: relative;
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    color: var(--white-pure);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    backdrop-filter: blur(var(--blur-sm));
+    transition: all var(--transition-base);
+}
+
+.btn-ghost:hover {
+    border-color: var(--gold-primary);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* Scroll Indicator */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: var(--space-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0.7;
+}
+
+.hero-scroll-indicator__text {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--white-dim);
+}
+
+.hero-scroll-indicator__line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--gold-primary), transparent);
+    animation: scrollPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scaleY(0.8) translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleY(1) translateY(10px);
+    }
+}
+
+/* ============================================
+   RESPONSIVE HERO
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .hero-cinematic {
+        min-height: 600px;
+    }
+    
+    .hero-title-kinetic {
+        font-size: clamp(3rem, 10vw, 8rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-cinematic {
+        min-height: 100vh;
+    }
+    
+    .hero-title-kinetic {
+        font-size: clamp(2.5rem, 12vw, 5rem);
+        line-height: 0.9;
+    }
+    
+    .hero-subtitle-cinematic {
+        font-size: var(--text-base);
+    }
+    
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: var(--space-md);
+    }
+    
+    .hero-stat__number {
+        font-size: var(--text-3xl);
+    }
+    
+    .btn-magnetic {
+        padding: 1.2rem 2.5rem;
+        font-size: var(--text-base);
+    }
+    
+    .btn-ghost {
+        padding: 1rem 2rem;
+        font-size: var(--text-sm);
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* ============================================
+   PERFORMANCE & ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-video__source {
+        animation: none;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .hero-video__grain {
+        animation: none;
+    }
+    
+    .hero-scroll-indicator__line {
+        animation: none;
+    }
+    
+    .btn-magnetic:hover {
+        transform: none;
+    }
+}
+
+/* Fallback for no video support */
+.no-video .hero-video {
+    background: linear-gradient(135deg, var(--black-rich), var(--black-soft)),
+                url('../images/hero-fallback.jpg') center/cover;
+}

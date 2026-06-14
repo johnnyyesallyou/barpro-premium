@@ -1,0 +1,38 @@
+
+PREMIUM UX FEATURES ADDED
+
+1. GSAP + SplitType animated typography
+   Use:
+   <h2 data-split>Luxury Cocktails</h2>
+
+2. Reveal animations
+   Use:
+   <div class="reveal">...</div>
+
+3. Magnetic interactions
+   Use:
+   <a class="magnetic">Reserve Table</a>
+
+4. Custom cursor
+   Add before </body>:
+   <div class="lux-cursor"></div>
+
+5. Three.js cinematic background
+   Add:
+   <canvas id="three-hero"></canvas>
+
+6. Luxury gallery
+   Use:
+   <div class="lux-gallery">...</div>
+
+7. Editorial pricing
+   Use:
+   <div class="editorial-price">$18</div>
+
+8. Asymmetrical layouts
+   Use:
+   <section class="asym-grid">...</section>
+
+9. Page transitions
+   Add class:
+   <main class="page-transition">

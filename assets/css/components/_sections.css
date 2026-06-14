@@ -1,0 +1,44 @@
+/* ============================================================
+   SECTION WRAPPER — studio spacing
+   ============================================================ */
+
+.studio-section { padding: 120px 8vw; }
+.studio-section--dark { background: var(--panel); }
+
+.studio-section__header {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+.studio-section__eyebrow {
+  font-size: .7rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.studio-section__eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.studio-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.studio-section__sub {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.studio-section__more {
+  margin-top: 48px;
+  text-align: center;
+}

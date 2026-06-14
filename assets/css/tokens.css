@@ -1,0 +1,225 @@
+/**
+ * BarPro Studio — Design Tokens
+ * Single Source of Truth для всех значений дизайн-системы.
+ *
+ * УРОВНИ:
+ *   1. Primitive tokens  — raw values
+ *   2. Semantic tokens   — значение зависит от контекста
+ *   3. Component tokens  — специфика компонентов
+ */
+
+:root {
+
+  /* ═══════════════════════════════════════════
+     1. PRIMITIVE TOKENS
+     ═══════════════════════════════════════════ */
+
+  /* Color — Raw palette */
+  --color-black-pure:   #000000;
+  --color-black-rich:   #080808;
+  --color-black-soft:   #101010;
+  --color-black-panel:  #141414;
+  --color-white-pure:   #ffffff;
+  --color-white-dim:    #f0f0f0;
+
+  --color-gold-100: #f9f0d0;
+  --color-gold-200: #f4e4a0;
+  --color-gold-300: #edd870;
+  --color-gold-400: #e6cb3f;
+  --color-gold-500: #d4af37;   /* ← primary brand gold */
+  --color-gold-600: #b8962e;
+  --color-gold-700: #9c7d26;
+  --color-gold-800: #7f641e;
+
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e0e0e0;
+  --color-gray-300: #bdbdbd;
+  --color-gray-400: #9e9e9e;
+  --color-gray-500: #888888;
+  --color-gray-600: #666666;
+  --color-gray-700: #555555;
+  --color-gray-800: #333333;
+  --color-gray-900: #1a1a1a;
+
+  /* Opacity variants */
+  --color-gold-a04:  rgba(212,175,55,.04);
+  --color-gold-a08:  rgba(212,175,55,.08);
+  --color-gold-a12:  rgba(212,175,55,.12);
+  --color-gold-a20:  rgba(212,175,55,.20);
+  --color-gold-a25:  rgba(212,175,55,.25);
+  --color-gold-a35:  rgba(212,175,55,.35);
+  --color-gold-a50:  rgba(212,175,55,.50);
+
+  --color-white-a04: rgba(255,255,255,.04);
+  --color-white-a06: rgba(255,255,255,.06);
+  --color-white-a08: rgba(255,255,255,.08);
+
+  /* Spacing scale — 4px base */
+  --space-0:    0px;
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:    12px;
+  --space-4:    16px;
+  --space-5:    20px;
+  --space-6:    24px;
+  --space-8:    32px;
+  --space-10:   40px;
+  --space-11:   44px;
+  --space-12:   48px;
+  --space-14:   56px;
+  --space-15:   60px;
+  --space-16:   64px;
+  --space-20:   80px;
+  --space-24:   96px;
+  --space-30:   120px;
+
+  /* Border radius scale */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  36px;
+  --radius-3xl:  48px;
+  --radius-full: 9999px;
+
+  /* Font scale — fluid via clamp */
+  --text-xs:   clamp(.65rem,  1vw,   .75rem);
+  --text-sm:   clamp(.8rem,   1.2vw, .9rem);
+  --text-base: clamp(.9rem,   1.5vw, 1rem);
+  --text-md:   clamp(1rem,    1.8vw, 1.125rem);
+  --text-lg:   clamp(1.125rem,2vw,   1.25rem);
+  --text-xl:   clamp(1.3rem,  2.5vw, 1.75rem);
+  --text-2xl:  clamp(1.6rem,  3vw,   2.25rem);
+  --text-3xl:  clamp(2rem,    4vw,   3rem);
+  --text-4xl:  clamp(2.5rem,  5vw,   4rem);
+  --text-5xl:  clamp(3.5rem,  7vw,   6rem);
+  --text-hero: clamp(4rem,    9vw,   9rem);
+
+  /* Font families */
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body:    'Jost', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Line heights */
+  --leading-tight:  .88;
+  --leading-snug:   1.1;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.7;
+  --leading-loose:  1.85;
+
+  /* Letter spacing */
+  --tracking-tight:  -.03em;
+  --tracking-normal:  .01em;
+  --tracking-wide:    .06em;
+  --tracking-wider:   .1em;
+  --tracking-widest:  .25em;
+
+  /* Duration */
+  --dur-instant: 80ms;
+  --dur-fast:    160ms;
+  --dur-base:    300ms;
+  --dur-slow:    500ms;
+  --dur-xslow:   800ms;
+  --dur-cinematic: 1200ms;
+
+  /* Easing */
+  --ease-out:    cubic-bezier(.16, 1, .3, 1);
+  --ease-in:     cubic-bezier(.7, 0, .84, 0);
+  --ease-in-out: cubic-bezier(.76, 0, .24, 1);
+  --ease-back:   cubic-bezier(.34, 1.56, .64, 1);
+  --ease-linear: linear;
+
+  /* Z-index scale */
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-fixed:    300;
+  --z-modal-backdrop: 400;
+  --z-modal:    500;
+  --z-toast:    600;
+  --z-cursor:   700;
+  --z-top:      9999;
+
+  /* Shadows */
+  --shadow-sm:   0 2px 8px rgba(0,0,0,.25);
+  --shadow-md:   0 8px 24px rgba(0,0,0,.35);
+  --shadow-lg:   0 20px 60px rgba(0,0,0,.45);
+  --shadow-xl:   0 30px 80px rgba(0,0,0,.55);
+  --shadow-gold: 0 10px 40px rgba(212,175,55,.3);
+  --shadow-gold-lg: 0 20px 64px rgba(212,175,55,.4);
+
+  /* ═══════════════════════════════════════════
+     2. SEMANTIC TOKENS
+     ═══════════════════════════════════════════ */
+
+  /* Backgrounds */
+  --bg:          var(--color-black-rich);
+  --bg-panel:    var(--color-black-soft);
+  --bg-panel-2:  var(--color-black-panel);
+  --bg-glass:    var(--color-white-a04);
+
+  /* Borders */
+  --border:        var(--color-white-a06);
+  --border-subtle: var(--color-white-a04);
+  --border-strong: var(--color-white-a08);
+  --border-gold:   var(--color-gold-a25);
+
+  /* Text */
+  --text-primary:   var(--color-white-dim);
+  --text-secondary: var(--color-gray-500);
+  --text-muted:     var(--color-gray-700);
+  --text-accent:    var(--color-gold-500);
+  --text-on-accent: var(--color-black-pure);
+
+  /* Brand */
+  --accent:       var(--color-gold-500);
+  --accent-dim:   var(--color-gold-a12);
+  --accent-glow:  var(--color-gold-a35);
+
+  /* Glass */
+  --glass:         var(--color-white-a04);
+  --glass-border:  var(--color-white-a08);
+
+  /* Section padding */
+  --section-py: var(--space-30);
+  --section-px: 8vw;
+
+  /* ═══════════════════════════════════════════
+     3. COMPONENT TOKENS
+     ═══════════════════════════════════════════ */
+
+  /* Nav */
+  --nav-height:         72px;
+  --nav-height-scrolled:56px;
+  --nav-bg:             rgba(8,8,8,.6);
+  --nav-bg-scrolled:    rgba(8,8,8,.92);
+
+  /* Button */
+  --btn-radius:      var(--radius-full);
+  --btn-pad-y:       14px;
+  --btn-pad-x:       28px;
+  --btn-font-size:   var(--text-sm);
+  --btn-font-weight: 500;
+  --btn-letter-spacing: var(--tracking-wide);
+
+  /* Card */
+  --card-radius:   var(--radius-2xl);
+  --card-padding:  var(--space-11);
+  --card-bg:       var(--bg-panel);
+  --card-border:   var(--border);
+
+  /* Cursor */
+  --cursor-size:          8px;
+  --cursor-follower-size: 36px;
+  --cursor-hover-size:    6px;
+  --cursor-follower-hover:56px;
+}
+
+/* Dark mode — в будущем */
+@media (prefers-color-scheme: light) {
+  /* BarPro принципиально dark-only — intentional */
+  :root { color-scheme: dark; }
+}

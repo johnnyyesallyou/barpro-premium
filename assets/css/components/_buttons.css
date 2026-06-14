@@ -1,0 +1,103 @@
+/* ============================================================
+   BUTTONS — pill style из studio redesign
+   ============================================================ */
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: .85rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: transform .3s var(--ease-out),
+              box-shadow .3s var(--ease-out),
+              background .3s,
+              color .3s;
+}
+.btn-pill:hover { transform: translateY(-2px); }
+
+.btn-pill--gold {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 0 0 var(--accent-glow);
+}
+.btn-pill--gold:hover {
+  box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+.btn-pill--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+}
+.btn-pill--ghost:hover {
+  background: var(--glass);
+  border-color: rgba(255,255,255,.2);
+}
+
+/* Magnetic button из docx Priority 1 */
+.btn-magnetic {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 44px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out);
+}
+.btn-magnetic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.25), transparent 65%);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.btn-magnetic:hover::before { opacity: 1; }
+.btn-magnetic:hover {
+  box-shadow: 0 12px 40px var(--accent-glow);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* WhatsApp CTA button (P5) */
+.tz-btn--whatsapp {
+  background: #25d366;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  min-height: 48px;
+  padding: .75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+  white-space: nowrap;
+}
+.tz-btn--whatsapp:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  color: #fff;
+}
+.tz-btn--whatsapp svg { flex-shrink: 0; }
+
+/* CTA row min tap target (mobile polish) */
+.tz-cta-row .tz-btn,
+.tz-cta-row .tz-btn--ghost {
+  min-height: 48px;
+}

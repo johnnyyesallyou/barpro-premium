@@ -1,0 +1,90 @@
+/* ============================================================
+   TESTIMONIALS — animated, Priority 2
+   ============================================================ */
+
+.studio-testimonials {
+  padding: 120px 8vw;
+}
+.studio-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.studio-testimonial {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: transform .4s var(--ease-out), box-shadow .4s, border-color .4s;
+}
+.studio-testimonial:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  border-color: var(--border-gold);
+}
+
+.studio-testimonial__stars {
+  display: flex;
+  gap: 4px;
+}
+.studio-testimonial__stars .star--on  { color: var(--accent); }
+.studio-testimonial__stars .star--off { color: var(--muted-2); }
+
+.studio-testimonial__quote {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text);
+  font-style: italic;
+  flex: 1;
+  position: relative;
+  padding-left: 20px;
+}
+.studio-testimonial__quote::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--accent);
+  font-family: var(--font-display);
+  opacity: .4;
+}
+
+.studio-testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.studio-testimonial__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border-gold);
+  flex-shrink: 0;
+  background: var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.studio-testimonial__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.studio-testimonial__name {
+  font-weight: 600;
+  font-size: .92rem;
+  color: var(--accent);
+}
+.studio-testimonial__position {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-top: 2px;
+}

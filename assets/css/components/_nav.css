@@ -1,0 +1,157 @@
+/* ============================================================
+   STUDIO HEADER
+   ============================================================ */
+
+.studio-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 60px;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  background: rgba(8,8,8,.6);
+  border-bottom: 1px solid var(--border);
+  transition: padding .4s var(--ease-out), background .4s;
+}
+.studio-nav.scrolled {
+  padding: 16px 60px;
+  background: rgba(8,8,8,.92);
+}
+
+.studio-nav__logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: .06em;
+}
+
+.studio-nav__menu {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+}
+.studio-nav__menu a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .85rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: color .3s;
+  position: relative;
+}
+.studio-nav__menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width .35s var(--ease-out);
+}
+.studio-nav__menu a:hover,
+.studio-nav__menu .current-menu-item a { color: var(--text); }
+.studio-nav__menu a:hover::after { width: 100%; }
+
+.studio-nav__cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Burger */
+.studio-nav__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.studio-nav__burger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--text);
+  transition: .35s var(--ease-out);
+}
+.studio-nav__burger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+.studio-nav__burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.studio-nav__burger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+/* Mobile drawer */
+.studio-nav__drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(320px, 85vw);
+  height: 100dvh;
+  background: var(--panel);
+  border-left: 1px solid var(--border);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 40px 40px;
+  gap: 32px;
+  transition: right .45s var(--ease-out);
+}
+.studio-nav__drawer.open { right: 0; }
+.studio-nav__drawer a {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  transition: color .3s;
+}
+.studio-nav__drawer a:hover { color: var(--accent); }
+
+/* Nav overlay */
+.studio-nav__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s;
+}
+/* Поддержка классов из drawer.js: 'open' (основной) */
+.studio-nav__overlay.visible,
+.studio-nav__overlay.is-open,
+.studio-nav__overlay.open { opacity: 1; pointer-events: all; }
+
+/* Drawer open state — drawer.js добавляет класс 'open' */
+.studio-nav__drawer.is-open,
+.studio-nav__drawer.open { transform: translateX(0); right: 0; }
+
+/* Burger active state — drawer.js добавляет класс 'open' */
+.studio-nav__burger.is-active span:nth-child(1),
+.studio-nav__burger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+.studio-nav__burger.is-active span:nth-child(2),
+.studio-nav__burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.studio-nav__burger.is-active span:nth-child(3),
+.studio-nav__burger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+.studio-nav__burger span { display: block; transition: transform .3s, opacity .3s; }
+
+/* Блокировка скролла при открытом меню */
+body.menu-open { overflow: hidden; }
+
+@media (max-width: 900px) {
+  .studio-nav { padding: 20px 24px; }
+  .studio-nav.scrolled { padding: 14px 24px; }
+  .studio-nav__menu,
+  .studio-nav__cta .btn-pill { display: none; }
+  .studio-nav__burger { display: flex; }
+}

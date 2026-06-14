@@ -1,0 +1,93 @@
+/* ============================================================
+   BENTO GRID — Priority 1 (из studio redesign)
+   ============================================================ */
+
+.bento-section {
+  padding: 120px 8vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.bento {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 44px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color .4s, transform .4s var(--ease-out), box-shadow .4s;
+  min-height: 220px;
+}
+.bento:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+}
+
+/* Subtle inner glow on hover */
+.bento::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), var(--accent-dim), transparent 65%);
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+.bento:hover::before { opacity: 1; }
+
+.bento__eyebrow {
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.bento__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.bento__body { color: var(--muted); line-height: 1.7; font-size: .95rem; }
+
+/* Grid spans */
+.bento--7  { grid-column: span 7; }
+.bento--5  { grid-column: span 5; }
+.bento--4  { grid-column: span 4; }
+.bento--8  { grid-column: span 8; }
+.bento--12 { grid-column: span 12; min-height: 160px; }
+
+/* Accent bento */
+.bento--accent {
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.04));
+  border-color: var(--border-gold);
+}
+
+/* Dark glass bento */
+.bento--glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+}
+
+/* Bento with large number */
+.bento__stat {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 1024px) {
+  .bento--7, .bento--5, .bento--8 { grid-column: span 6; }
+  .bento--4 { grid-column: span 6; }
+}
+@media (max-width: 768px) {
+  .bento-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 16px; }
+  .bento--7, .bento--5, .bento--8, .bento--4, .bento--12 { grid-column: span 1; }
+}

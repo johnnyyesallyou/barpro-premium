@@ -1,0 +1,30 @@
+/**
+ * BarPro Studio — главный CSS файл
+ * Импортирует все компоненты в правильном порядке.
+ * В production заменяется единым minified bundle через Vite.
+ */
+
+/* 1. Токены и переменные */
+@import url('./tokens.css');
+
+/* 2. Анимации (keyframes) */
+@import url('./_animations.css');
+
+/* 3. Motion system */
+@import url('./motion.css');
+
+/* 4. Компоненты */
+@import url('./components/_nav.css');
+@import url('./components/_buttons.css');
+@import url('./components/_hero.css');
+@import url('./components/_bento.css');
+@import url('./components/_showcase.css');
+@import url('./components/_pricing.css');
+@import url('./components/_cocktails.css');
+@import url('./components/_testimonials.css');
+@import url('./components/_cta.css');
+@import url('./components/_footer.css');
+@import url('./components/_sections.css');
+@import url('./components/_team.css');
+@import url('./components/_catering.css');
+@import url('./components/_cursor.css');

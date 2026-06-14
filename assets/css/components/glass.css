@@ -1,0 +1,269 @@
+/**
+ * BarPro Premium - Glassmorphism Components
+ * Awwwards-level glass effects
+ */
+
+/* ============================================
+   BASE GLASS STYLES
+   ============================================ */
+
+.glass {
+    background: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition-base);
+}
+
+.glass-light {
+    background: rgba(26, 26, 26, 0.4);
+    backdrop-filter: blur(var(--blur-sm));
+    -webkit-backdrop-filter: blur(var(--blur-sm));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-dark {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================
+   GOLD GLASS VARIANTS
+   ============================================ */
+
+.glass-gold {
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.1),
+        rgba(212, 175, 55, 0.05)
+    );
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.1);
+}
+
+.glass-gold-strong {
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.2),
+        rgba(212, 175, 55, 0.1)
+    );
+    backdrop-filter: blur(var(--blur-lg));
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: var(--shadow-gold);
+}
+
+/* ============================================
+   GLASS CARDS
+   ============================================ */
+
+.glass-card {
+    background: rgba(26, 26, 26, 0.4);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: var(--space-md);
+    transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+    background: rgba(26, 26, 26, 0.6);
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-gold);
+}
+
+.glass-card--large {
+    padding: var(--space-lg);
+    border-radius: var(--radius-xl);
+}
+
+.glass-card--interactive {
+    cursor: pointer;
+}
+
+.glass-card--interactive:hover {
+    background: rgba(26, 26, 26, 0.7);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-gold-strong);
+}
+
+/* ============================================
+   GLASS NAVIGATION
+   ============================================ */
+
+.glass-nav {
+    background: rgba(10, 10, 10, 0.4);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-nav--scrolled {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(var(--blur-lg));
+    border-bottom-color: rgba(212, 175, 55, 0.2);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   GLASS BUTTONS
+   ============================================ */
+
+.glass-btn {
+    background: rgba(212, 175, 55, 0.15);
+    backdrop-filter: blur(var(--blur-sm));
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--radius-full);
+    padding: 1rem 2rem;
+    font-weight: var(--weight-semibold);
+    color: var(--gold-light);
+    transition: all var(--transition-base);
+}
+
+.glass-btn:hover {
+    background: rgba(212, 175, 55, 0.25);
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-2px);
+}
+
+.glass-btn:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   GLASS MODALS
+   ============================================ */
+
+.glass-modal {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(var(--blur-xl));
+    -webkit-backdrop-filter: blur(var(--blur-xl));
+    border-radius: var(--radius-2xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-xl);
+}
+
+.glass-modal-backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(var(--blur-md));
+}
+
+/* ============================================
+   GLASS TOOLTIPS
+   ============================================ */
+
+.glass-tooltip {
+    background: rgba(26, 26, 26, 0.9);
+    backdrop-filter: blur(var(--blur-sm));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 1rem;
+    font-size: var(--text-sm);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   GLASS BADGES
+   ============================================ */
+
+.glass-badge {
+    background: rgba(212, 175, 55, 0.2);
+    backdrop-filter: blur(var(--blur-xs));
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--radius-full);
+    padding: 0.25rem 0.75rem;
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    color: var(--gold-light);
+}
+
+/* ============================================
+   GLASS OVERLAYS
+   ============================================ */
+
+.glass-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(10, 10, 10, 0) 0%,
+        rgba(10, 10, 10, 0.6) 50%,
+        rgba(10, 10, 10, 0.9) 100%
+    );
+    backdrop-filter: blur(var(--blur-sm));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.glass-overlay--visible {
+    opacity: 1;
+}
+
+.glass-overlay--gold {
+    background: linear-gradient(
+        180deg,
+        rgba(212, 175, 55, 0) 0%,
+        rgba(212, 175, 55, 0.1) 50%,
+        rgba(212, 175, 55, 0.2) 100%
+    );
+}
+
+/* ============================================
+   GLASS GRADIENTS
+   ============================================ */
+
+.glass-gradient-gold {
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.15) 0%,
+        rgba(212, 175, 55, 0.05) 50%,
+        rgba(212, 175, 55, 0) 100%
+    );
+}
+
+.glass-gradient-dark {
+    background: linear-gradient(
+        135deg,
+        rgba(10, 10, 10, 0.8) 0%,
+        rgba(10, 10, 10, 0.6) 50%,
+        rgba(10, 10, 10, 0.4) 100%
+    );
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .glass-card {
+        padding: var(--space-sm);
+    }
+    
+    .glass-modal {
+        padding: var(--space-md);
+        border-radius: var(--radius-xl);
+    }
+}
+
+/* ============================================
+   PERFORMANCE FALLBACKS
+   ============================================ */
+
+@supports not (backdrop-filter: blur(1px)) {
+    .glass,
+    .glass-light,
+    .glass-dark,
+    .glass-gold,
+    .glass-card,
+    .glass-nav {
+        background: rgba(26, 26, 26, 0.95);
+    }
+}

@@ -1,0 +1,372 @@
+/*
+Theme Name: BarPro Premium
+Theme URI: https://barpro-premium.ru
+Author: BarPro Team
+Author URI: https://barpro-premium.ru
+Description: Премиум тема для выездного бара. Включает калькулятор стоимости, каталог коктейлей, пакеты услуг, портфолио, партнёрскую программу и маркетинговые виджеты. Реализовано ТЗ Event Premium v1.0.
+Version: 1.1.0
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 8.0
+License: GPL v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: barpro
+Tags: business, portfolio, e-commerce, one-column, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, theme-options
+
+BarPro Premium - выездной бар премиум класса
+*/
+
+/* ============================================
+   БАЗОВЫЕ СТИЛИ
+   ============================================ */
+
+:root {
+    --dark-bg: #0a0a0a;
+    --gold-primary: #d4af37;
+    --gold-light: #f4d03f;
+    --white-text: #ffffff;
+    --gray-text: #b0b0b0;
+    --section-padding: 5rem 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--white-text);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--gold-primary);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: var(--gold-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================================
+   КОНТЕЙНЕР
+   ============================================ */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: var(--section-padding);
+}
+
+.section-dark {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(10, 10, 10, 0.95));
+}
+
+/* ============================================
+   ЗАГОЛОВКИ
+   ============================================ */
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--gold-primary);
+}
+
+/* ============================================
+   КНОПКИ
+   ============================================ */
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--gold-primary);
+    color: var(--dark-bg);
+}
+
+.btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--gold-primary);
+    color: var(--gold-primary);
+}
+
+.btn-outline:hover {
+    background: var(--gold-primary);
+    color: var(--dark-bg);
+}
+
+/* ============================================
+   СЕТКИ
+   ============================================ */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s;
+}
+
+.card:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    color: var(--gold-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold-primary);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 3rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* WordPress Core */
+.alignnone {
+    margin: 1.5rem 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 1.5rem auto;
+}
+
+.alignleft {
+    float: left;
+    margin: 0.5rem 1.5rem 1.5rem 0;
+}
+
+.alignright {
+    float: right;
+    margin: 0.5rem 0 1.5rem 1.5rem;
+}
+
+.wp-caption {
+    max-width: 100%;
+}
+
+.wp-caption-text {
+    text-align: center;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.sticky {
+    /* Стили для закреплённых постов */
+}
+
+.bypostauthor {
+    /* Стили для постов автора */
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--gold-primary);
+    color: var(--dark-bg);
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--dark-bg);
+    outline-offset: 2px;
+}
+
+/* Focus states для всех интерактивных элементов */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+.btn:focus {
+    outline: 2px solid var(--gold-primary);
+    outline-offset: 2px;
+}
+
+/* Улучшенный контраст для текста */
+.hero__subtitle,
+.section-desc,
+p.gray-text {
+    color: #e0e0e0; /* было #b0b0b0 - недостаточный контраст */
+}
+
+/* Focus visible для keyboard navigation */
+*:focus-visible {
+    outline: 3px solid var(--gold-primary);
+    outline-offset: 3px;
+}
+
+/* Убрать outline для mouse users */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Улучшенная видимость для form elements */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+/* Keyboard navigation для карточек */
+.pricing-card:focus-within,
+.cocktail-card:focus-within,
+.service-card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+/* ============================================================
+   ACCESSIBILITY: visually-hidden utility
+   ============================================================ */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ============================================================
+   MOBILE: responsive breakpoints
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    /* Calculator */
+    .calc-wizard      { padding: 1.5rem 1rem; }
+    .calc-range       { height: 44px; } /* крупнее для пальцев */
+    .btn-calc         { padding: 0.9rem 1.5rem; font-size: 0.95rem; }
+    .calc-cards       { grid-template-columns: 1fr 1fr; }
+    .calc-email-input { font-size: 1rem; padding: 0.9rem 1rem; }
+
+    /* Navigation */
+    .calc-nav-buttons { flex-direction: column; gap: 0.75rem; }
+    .btn-calc-prev,
+    .btn-calc-next    { width: 100%; text-align: center; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    /* Typography */
+    h1 { font-size: clamp(1.6rem, 6vw, 2.5rem); }
+    h2 { font-size: clamp(1.3rem, 5vw, 2rem); }
+
+    /* Calculator */
+    .calc-wizard      { padding: 1rem 0.75rem; border-radius: 10px; }
+    .calc-cards       { grid-template-columns: 1fr; }
+    .calc-card        { padding: 0.9rem; }
+    .calc-group       { margin-bottom: 1.25rem; }
+    .calc-result-price { font-size: clamp(2rem, 8vw, 3rem); }
+
+    /* Sections */
+    :root { --section-padding: 2.5rem 1rem; }
+
+    /* Buttons */
+    .btn-primary,
+    .btn-secondary    { width: 100%; text-align: center; }
+}
+
+/* Very small */
+@media (max-width: 360px) {
+    .calc-wizard { padding: 0.75rem 0.5rem; }
+}

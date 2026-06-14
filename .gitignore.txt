@@ -1,0 +1,1 @@
+# OS .DS_Store Thumbs.db # IDE .vscode/ .idea/ *.swp # Docker .env docker-compose.override.yml # Node/Vite node_modules/ npm-debug.log yarn-error.log dist/ .vite/ # WordPress wp-config.php wp-content/uploads/ wp-content/backup/ wp-content/cache/ debug.log # Temp files *.log *.tmp temp/ # Build artifacts assets/dist/ .cache/ # Environment .env.local .env.*.local

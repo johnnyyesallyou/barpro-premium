@@ -1,0 +1,47 @@
+/* ============================================================
+   CUSTOM CURSOR — Priority 1 из docx
+   ============================================================ */
+
+@media (pointer: fine) {
+  body { cursor: none; }
+  a, button, [role="button"], .bento, .showcase-card, .cocktail-card-studio { cursor: none; }
+}
+.studio-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, background .2s;
+  mix-blend-mode: difference;
+}
+.studio-cursor-follower {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(212,175,55,.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width .35s var(--ease-out),
+              height .35s var(--ease-out),
+              transform .12s linear,
+              border-color .3s;
+}
+.studio-cursor.hovering { width: 6px; height: 6px; }
+.studio-cursor-follower.hovering {
+  width: 60px;
+  height: 60px;
+  border-color: var(--accent);
+}
+@media (pointer: coarse) {
+  .studio-cursor,
+  .studio-cursor-follower { display: none; }
+}
+
+/* btn-pill full width */
+.btn-pill--full { width: 100%; justify-content: center; }

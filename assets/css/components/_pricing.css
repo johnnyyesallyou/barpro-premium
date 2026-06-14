@@ -1,0 +1,99 @@
+/* ============================================================
+   PRICING — studio upgrade
+   ============================================================ */
+
+.studio-pricing {
+  padding: 120px 8vw;
+}
+.studio-pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.studio-pricing-card {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .4s var(--ease-out), box-shadow .4s, border-color .4s;
+}
+.studio-pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(0,0,0,.4);
+  border-color: var(--border-gold);
+}
+.studio-pricing-card--featured {
+  border-color: var(--accent);
+  background: linear-gradient(160deg, rgba(212,175,55,.1), var(--panel));
+}
+.studio-pricing-card--featured::before {
+  content: 'ХИТ ПРОДАЖ';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: #000;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  padding: 6px 20px;
+  border-radius: 999px;
+}
+
+.studio-pricing-card__tier {
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.studio-pricing-card__price {
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.studio-pricing-card__period {
+  color: var(--muted);
+  font-size: .85rem;
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.studio-pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.studio-pricing-card__features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+.studio-pricing-card__features li::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3 3 5-6' stroke='%23d4af37' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
